@@ -26,6 +26,8 @@ class StorageUserController extends UserController
 
             $newUser = $this->modelUser->create($request->only($this->modelUser->getFillable()));
 
+            DB::commit();
+
             return new UserResource($newUser);
         } catch (Throwable $exception) {
             try {
