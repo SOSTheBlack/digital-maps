@@ -89,11 +89,11 @@ class StorageUserTest extends TestCase
             ->assertCreated()
             ->assertJsonStructure([
                 'data' => [
+                    'uuid',
                     'name',
                     'email',
                     'updated_at',
-                    'created_at',
-                    'id',
+                    'created_at'
                 ]
             ]);
 
