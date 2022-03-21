@@ -6,6 +6,7 @@ use App\Exceptions\AppException;
 use App\Http\Requests\Api\User\StorageUserRequest;
 use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Throwable;
 
 class StorageUserController extends UserController
@@ -25,14 +26,12 @@ class StorageUserController extends UserController
             DB::beginTransaction();
 
             $newUser = $this->modelUser->create($request->only($this->modelUser->getFillable()));
-            $var = $newUser->createToken($newUser->uuid);
-            dump($newUser->token);
+            $newUser->token = Str::after($newUser->createToken($newUser->uuid)->plainTextToken, '|');
 
             DB::commit();
 
             return new UserResource($newUser);
         } catch (Throwable $exception) {
-            dd($exception);
             try {
                 DB::rollBack();
             } catch (Throwable $e) {

@@ -92,6 +92,8 @@ class StorageUserTest extends TestCase
                     'uuid',
                     'name',
                     'email',
+                    'token',
+                    'token_type',
                     'updated_at',
                     'created_at'
                 ]

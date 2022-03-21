@@ -20,12 +20,19 @@ class UserResource extends JsonResource
      */
     public function toArray($request): array
     {
-        return [
+        $fields = collect([
             'uuid' => $this->uuid,
             'name' => $this->name,
             'email' => $this->email,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-        ];
+        ]);
+
+        if ($this?->token) {
+            $fields->put('token', $this->token);
+            $fields->put('token_type', 'Bearer');
+        }
+
+        return $fields->toArray();
     }
 }

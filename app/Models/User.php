@@ -106,11 +106,4 @@ class User extends Authenticatable
             }
         });
     }
-
-    public function token(): Attribute
-    {
-        return Attribute::make(
-            get: fn($value) => $this->accessToken->plainTextToken,
-        );
-    }
 }
