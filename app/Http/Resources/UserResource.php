@@ -5,6 +5,7 @@ namespace App\Http\Resources;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Str;
 
 /**
  * @mixin User
@@ -29,8 +30,9 @@ class UserResource extends JsonResource
         ]);
 
         if ($this?->token) {
-            $fields->put('token', $this->token);
-            $fields->put('token_type', 'Bearer');
+            $fields
+                ->put('token', Str::after($this->token, '|'))
+                ->put('token_type', 'Bearer');
         }
 
         return $fields->toArray();
