@@ -12,6 +12,9 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 });
 
-Route::post('users/storage')->uses('Users\StorageUserController')->name('users.storage');
+Route::prefix('users')->namespace('Users')->name('users')->group(function () {
+    Route::post('/storage')->uses('StorageUserController')->name('.storage');
+    Route::post('/login')->uses('LoginController')->name('.login');
+});
 
-Route::post('auth/login')->uses('Auth\LoginController')->name('auth.login');
+
