@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Users;
 use App\Exceptions\AppException;
 use App\Http\Requests\Api\User\StorageUserRequest;
 use App\Http\Resources\UserResource;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Throwable;
@@ -25,8 +26,9 @@ class StorageUserController extends UserController
         try {
             DB::beginTransaction();
 
-            $newUser = $this->modelUser->create($request->only($this->modelUser->getFillable()));
-            $newUser->token = Str::after($newUser->createToken($newUser->uuid)->plainTextToken, '|');
+            /** @var User $newUser */
+            $newUser = $this->userRepository->create($request->only($this->modelUser->getFillable()));
+            $newUser->token = $this->userRepository->generateToken($newUser);
 
             DB::commit();
 
