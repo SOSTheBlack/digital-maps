@@ -2,11 +2,11 @@
 
 namespace App\Providers;
 
-use App\Repositories\Contracts\UserRepository;
-use App\Repositories\UserRepositoryEloquent;
+use App\Models\User;
+use App\Observers\UserObserver;
 use Illuminate\Support\ServiceProvider;
 
-class RepositoryServiceProvider extends ServiceProvider
+class ObserverServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -15,7 +15,7 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(UserRepository::class, UserRepositoryEloquent::class);
+        //
     }
 
     /**
@@ -25,6 +25,6 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        User::observe(UserObserver::class);
     }
 }

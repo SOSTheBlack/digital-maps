@@ -4,7 +4,6 @@ namespace App\Repositories;
 
 use App\Models\User;
 use App\Repositories\Contracts\UserRepository;
-use App\Validators\UserValidator;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Exceptions\RepositoryException;
@@ -31,9 +30,21 @@ class UserRepositoryEloquent extends BaseRepository implements UserRepository
      *
      * @throws RepositoryException
      */
-    public function boot()
+    public function boot(): void
     {
         $this->pushCriteria(app(RequestCriteria::class));
+    }
+
+    /**
+     * Create new token for user.
+     *
+     * @param  User  $user
+     *
+     * @return string
+     */
+    public function generateToken(User $user): string
+    {
+        return $user->createToken('auth_token')->plainTextToken;
     }
 
 }
