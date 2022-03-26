@@ -2,15 +2,14 @@
 
 namespace App\Http\Resources;
 
-use App\Models\User;
+use App\Models\PointInterest;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Str;
 
 /**
- * @mixin User
+ * @mixin PointInterest
  */
-class UserResource extends JsonResource
+class PointInterestResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -21,20 +20,16 @@ class UserResource extends JsonResource
      */
     public function toArray($request): array
     {
-        $fields = collect([
+        return [
             'uuid' => $this->uuid,
             'name' => $this->name,
-            'email' => $this->email,
+            'latitude' => $this->latitude,
+            'longitude' => $this->longitude,
+            'opened' => $this->opened?->format('H:i'),
+            'closed' => $this->closed?->format('H:i'),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-        ]);
-
-        if ($this?->token) {
-            $fields
-                ->put('token', Str::after($this->token, '|'))
-                ->put('token_type', 'Bearer');
-        }
-
-        return $fields->toArray();
+            'owner' => new UserResource($this->owner)
+        ];
     }
 }
