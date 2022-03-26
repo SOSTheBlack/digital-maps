@@ -10,11 +10,15 @@ Route::middleware('auth:sanctum')->group(function () {
             return new UserResource($request->user());
         })->name('users.me');
     });
+
+    Route::prefix('point-interests')->namespace('PointInterests')->name('point-interests.')->group(function () {
+        Route::post('/')->name('storage')->uses('StoragePointInterestController');
+    });
 });
 
-Route::prefix('users')->namespace('Users')->name('users')->group(function () {
-    Route::post('/storage')->uses('StorageUserController')->name('.storage');
-    Route::post('/login')->uses('LoginController')->name('.login');
+Route::prefix('users')->namespace('Users')->name('users.')->group(function () {
+    Route::post('/storage')->name('storage')->uses('StorageUserController');
+    Route::post('/login')->name('login')->uses('LoginController');
 });
 
 
