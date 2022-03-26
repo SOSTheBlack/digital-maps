@@ -12,12 +12,13 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::prefix('point-interests')->namespace('PointInterests')->name('point-interests.')->group(function () {
-        Route::post('/')->name('storage')->uses('StoragePointInterestController');
+        Route::get('/')->name('list')->uses('ListController');
+        Route::post('/')->name('storage')->uses('StorageController');
     });
 });
 
 Route::prefix('users')->namespace('Users')->name('users.')->group(function () {
-    Route::post('/storage')->name('storage')->uses('StorageUserController');
+    Route::post('/storage')->name('storage')->uses('StorageController');
     Route::post('/login')->name('login')->uses('LoginController');
 });
 

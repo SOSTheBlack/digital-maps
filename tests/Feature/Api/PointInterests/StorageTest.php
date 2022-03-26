@@ -8,7 +8,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class StoragePointInterestTest extends TestCase
+class StorageTest extends TestCase
 {
     use RefreshDatabase;
     use WithFaker;
@@ -31,7 +31,6 @@ class StoragePointInterestTest extends TestCase
             ->postJson(route('point-interests.storage'), []);
 
         $response
-            ->dump()
             ->assertUnprocessable()
             ->assertJsonCount(3, 'errors')
             ->assertJsonStructure([
@@ -56,7 +55,7 @@ class StoragePointInterestTest extends TestCase
             ->assertSuccessful()
             ->assertCreated()
             ->assertJsonCount(1)
-            ->assertJsonCount(8, 'data')
+            ->assertJsonCount(9, 'data')
             ->assertJsonStructure([
                 'data' => [
                     'uuid',
@@ -67,6 +66,7 @@ class StoragePointInterestTest extends TestCase
                     'closed',
                     'created_at',
                     'updated_at',
+                    'owner'
                 ]
             ]);
     }
@@ -83,7 +83,7 @@ class StoragePointInterestTest extends TestCase
             ->assertSuccessful()
             ->assertCreated()
             ->assertJsonCount(1)
-            ->assertJsonCount(8, 'data')
+            ->assertJsonCount(9, 'data')
             ->assertJsonStructure([
                 'data' => [
                     'uuid',
@@ -94,6 +94,7 @@ class StoragePointInterestTest extends TestCase
                     'closed',
                     'created_at',
                     'updated_at',
+                    'owner'
                 ]
             ]);
     }

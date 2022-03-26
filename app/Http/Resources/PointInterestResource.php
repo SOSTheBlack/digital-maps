@@ -29,6 +29,7 @@ class PointInterestResource extends JsonResource
             'closed' => $this->closed?->format('H:i'),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'owner' => new UserResource($this->owner)
         ];
     }
 }

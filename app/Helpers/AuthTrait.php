@@ -9,18 +9,10 @@ use App\Models\User;
  */
 trait AuthTrait
 {
-    protected User $authUser;
+    protected ?User $authUser;
 
     public function __construct()
     {
-        $this->authUser = static::user();
-    }
-
-    /**
-     * @return User
-     */
-    public static function user(): User
-    {
-        return request()->user();
+        $this->authUser = request()->user();
     }
 }

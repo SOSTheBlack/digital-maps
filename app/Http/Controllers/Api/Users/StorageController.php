@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Throwable;
 
-class StorageUserController extends UserController
+class StorageController extends UserController
 {
     /**
      * Handle the incoming request.

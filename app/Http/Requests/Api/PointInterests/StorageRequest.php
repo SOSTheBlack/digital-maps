@@ -11,7 +11,7 @@ use Illuminate\Foundation\Http\FormRequest;
  * @property-read string $opened
  * @property-read string $closed
  */
-class StoragePointInterestRequest extends FormRequest
+class StorageRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

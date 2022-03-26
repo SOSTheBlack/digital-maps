@@ -82,6 +82,6 @@ class PointInterest extends BaseModel implements Transformable
      */
     public function owner(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
