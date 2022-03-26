@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\Users;
 
 use App\Exceptions\AppException;
-use App\Http\Requests\Api\Auth\LoginRequest;
+use App\Http\Requests\Api\Users\LoginRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;

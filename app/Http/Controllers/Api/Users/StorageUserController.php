@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api\Users;
 
 use App\Exceptions\AppException;
-use App\Http\Requests\Api\User\StorageUserRequest;
+use App\Http\Requests\Api\Users\StorageUserRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
