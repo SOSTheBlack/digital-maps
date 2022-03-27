@@ -38,11 +38,13 @@ class PointInterestRepositoryEloquent extends BaseRepository implements PointInt
     }
 
     /**
+     * Get all point interest proximity by parameters.
+     *
      * @param  int  $latitude
      * @param  int  $longitude
      * @param  int  $meters
      *
-     * @return Collection
+     * @return Collection[PointInterest]
      */
     public function searchProximity(int $latitude, int $longitude, int $meters): Collection
     {

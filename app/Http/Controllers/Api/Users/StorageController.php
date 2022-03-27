@@ -6,7 +6,9 @@ use App\Exceptions\AppException;
 use App\Http\Requests\Api\Users\StorageUserRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\HttpFoundation\Response;
 use Throwable;
 
 final class StorageController extends UserController
@@ -16,11 +18,11 @@ final class StorageController extends UserController
      *
      * @param  StorageUserRequest  $request
      *
-     * @return UserResource
+     * @return UserResource|JsonResponse
      *
      * @throws AppException
      */
-    final public function __invoke(StorageUserRequest $request): UserResource
+    final public function __invoke(StorageUserRequest $request): UserResource|JsonResponse
     {
         try {
             DB::beginTransaction();
@@ -38,6 +40,8 @@ final class StorageController extends UserController
             } catch (Throwable $e) {
                 throw new AppException(__('error creating user'));
             }
+
+            return response()->json(['message' => 'error creating user'], Response::HTTP_BAD_REQUEST);
         }
     }
 }
