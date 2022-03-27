@@ -29,7 +29,7 @@ class UserResource extends JsonResource
             'updated_at' => $this->updated_at,
         ]);
 
-        if ($this?->token) {
+        if (isset($this?->token)) {
             $fields
                 ->put('token', Str::after($this->token, '|'))
                 ->put('token_type', 'Bearer');
