@@ -2,9 +2,13 @@
 
 namespace App\Models;
 
+use Database\Factories\PointInterestFactory;
+use Eloquent;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Query\Builder;
+use Illuminate\Support\Carbon;
 use Prettus\Repository\Contracts\Transformable;
 use Prettus\Repository\Traits\TransformableTrait;
 
@@ -17,16 +21,16 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @property string $name
  * @property int $latitude
  * @property int $longitude
- * @property \Illuminate\Support\Carbon|null $opened
- * @property \Illuminate\Support\Carbon|null $closed
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property \Illuminate\Support\Carbon|null $deleted_at
- * @property-read \App\Models\User|null $owner
- * @method static \Database\Factories\PointInterestFactory factory(...$parameters)
+ * @property Carbon|null $opened
+ * @property Carbon|null $closed
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @property Carbon|null $deleted_at
+ * @property-read User|null $owner
+ * @method static PointInterestFactory factory(...$parameters)
  * @method static \Illuminate\Database\Eloquent\Builder|PointInterest newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|PointInterest newQuery()
- * @method static \Illuminate\Database\Query\Builder|PointInterest onlyTrashed()
+ * @method static Builder|PointInterest onlyTrashed()
  * @method static \Illuminate\Database\Eloquent\Builder|PointInterest query()
  * @method static \Illuminate\Database\Eloquent\Builder|PointInterest whereClosed($value)
  * @method static \Illuminate\Database\Eloquent\Builder|PointInterest whereCreatedAt($value)
@@ -39,9 +43,9 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|PointInterest whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|PointInterest whereUserId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|PointInterest whereUuid($value)
- * @method static \Illuminate\Database\Query\Builder|PointInterest withTrashed()
- * @method static \Illuminate\Database\Query\Builder|PointInterest withoutTrashed()
- * @mixin \Eloquent
+ * @method static Builder|PointInterest withTrashed()
+ * @method static Builder|PointInterest withoutTrashed()
+ * @mixin Eloquent
  */
 class PointInterest extends BaseModel implements Transformable
 {
@@ -52,7 +56,7 @@ class PointInterest extends BaseModel implements Transformable
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array<int, string>
      */
     protected $fillable = [
         'user_id',
@@ -67,7 +71,7 @@ class PointInterest extends BaseModel implements Transformable
     /**
      * The attributes that should be cast.
      *
-     * @var array
+     * @var array<string, string>
      */
     protected $casts = [
         'latitude' => 'int',
