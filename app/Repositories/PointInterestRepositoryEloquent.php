@@ -28,13 +28,22 @@ class PointInterestRepositoryEloquent extends BaseRepository implements PointInt
     /**
      * Boot up the repository, pushing criteria
      *
+     * @return void
+     *
      * @throws RepositoryException
      */
-    public function boot()
+    public function boot(): void
     {
         $this->pushCriteria(app(RequestCriteria::class));
     }
 
+    /**
+     * @param  int  $latitude
+     * @param  int  $longitude
+     * @param  int  $meters
+     *
+     * @return Collection
+     */
     public function searchProximity(int $latitude, int $longitude, int $meters): Collection
     {
         return $this->model
