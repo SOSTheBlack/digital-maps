@@ -18,7 +18,7 @@ class PointInterestObserver
      */
     public function creating(PointInterest $pointInterest): void
     {
-        if (is_null($pointInterest->user_id)) {
+        if (isset($pointInterest->user_id)) {
             $pointInterest->user_id = $this->authUser->id;
         }
     }
