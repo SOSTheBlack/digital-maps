@@ -27,7 +27,7 @@ final class StorageController extends UserController
 
             /** @var User $newUser */
             $newUser = $this->userRepository->create($request->only($this->modelUser->getFillable()));
-            $newUser->token = $this->userRepository->generateToken($newUser);
+            $this->userRepository->generateToken($newUser);
 
             DB::commit();
 

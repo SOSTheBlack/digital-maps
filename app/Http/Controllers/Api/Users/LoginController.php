@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
+use Throwable;
 
 final class LoginController extends UserController
 {
@@ -26,10 +27,10 @@ final class LoginController extends UserController
 
             /** @var User $user */
             $user = $this->userRepository->findByField('email', $request['email'])->first();
-            $user->token = $this->userRepository->generateToken($user);
+            $this->userRepository->generateToken($user);
 
             return new UserResource($user);
-        } catch (\Throwable $exception) {
+        } catch (Throwable $exception) {
             return response()->json([
                 'message' => $exception->getMessage()
             ], Response::HTTP_UNAUTHORIZED);

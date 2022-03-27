@@ -31,7 +31,7 @@ class UserResource extends JsonResource
 
         if (isset($this->token)) {
             $fields
-                ->put('token', Str::after($this->token, '|'))
+                ->put('token', Str::after((string) $this->token, '|'))
                 ->put('token_type', 'Bearer');
         }
 
