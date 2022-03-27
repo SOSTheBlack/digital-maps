@@ -4,11 +4,19 @@ namespace App\Http\Controllers\Api\PointInterests\Approximations;
 
 use App\Http\Requests\Api\PointInterests\Approximations\StorageRequest;
 use App\Http\Resources\ApproximationResource;
+use App\Http\Resources\PointInterestResource;
+use App\Models\Approximation;
+use App\Services\Proximity\ProximityService;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 final class StorageController extends ApproximationController
 {
-    final public function __invoke(StorageRequest $request): ApproximationResource
+    final public function __invoke(StorageRequest $request): AnonymousResourceCollection
     {
-        return new ApproximationResource($this->approximationRepository->createByRequest($request));
+        return PointInterestResource::collection(
+            app(ProximityService::class)->search(
+                $this->approximationRepository->createByRequest($request)
+            )
+        );
     }
 }

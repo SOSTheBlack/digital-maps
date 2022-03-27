@@ -3,6 +3,7 @@
 namespace Api\PointInterests\Approximations;
 
 use App\Models\Approximation;
+use App\Models\PointInterest;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -48,28 +49,31 @@ class StorageApproximationTest extends TestCase
 
     public function test_create_approximation_with_success()
     {
-        $pointInterest = Approximation::factory()->make();
+        PointInterest::factory()->count(50)->create();
+        $makeApproximation = Approximation::factory()->make();
 
         $response = $this
             ->withToken(User::factory()->create()->createToken('tests')->plainTextToken)
-            ->postJson(route('point-interests.approximations.storage'), $pointInterest->toArray());
+            ->postJson(route('point-interests.approximations.storage'), $makeApproximation->toArray());
 
         $response
-            ->dump()
             ->assertSuccessful()
-            ->assertCreated()
+            ->assertOk()
             ->assertJsonCount(1)
             ->assertJsonCount(8, 'data')
             ->assertJsonStructure([
                 'data' => [
-                    'uuid',
-                    'latitude',
-                    'longitude',
-                    'meters',
-                    'time',
-                    'created_at',
-                    'updated_at',
-                    'owner'
+                    '*' => [
+                        'uuid',
+                        'name',
+                        'latitude',
+                        'longitude',
+                        'opened',
+                        'closed',
+                        'created_at',
+                        'updated_at',
+                        'owner'
+                    ]
                 ]
             ]);
     }

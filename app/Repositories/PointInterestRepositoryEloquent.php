@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\PointInterest;
 use App\Repositories\Contracts\PointInterestRepository;
+use Illuminate\Database\Eloquent\Collection;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Exceptions\RepositoryException;
 
@@ -32,5 +33,17 @@ class PointInterestRepositoryEloquent extends BaseRepository implements PointInt
     public function boot()
     {
         $this->pushCriteria(app(RequestCriteria::class));
+    }
+
+    public function searchProximity(int $latitude, int $longitude, int $meters): Collection
+    {
+        return $this->model
+            ->whereBetween('latitude', [
+                $latitude - $meters,
+                $latitude + $meters
+            ])->whereBetween('longitude', [
+                $longitude - $meters,
+                $longitude + $meters
+            ])->get();
     }
 }
