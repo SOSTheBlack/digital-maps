@@ -103,7 +103,11 @@ final class User extends Authenticatable
         parent::boot();
 
         self::creating(function ($model) {
-            if (collect($model->getFillable())->filter(fn(string $columnName) => $columnName === BaseModel::KEY_UUID)->isNotEmpty()) {
+            /** @var array $fillable */
+            $fillable = $model->getFillable();
+            $filterKeyColumn = collect($fillable)->filter(fn(string $columnName) => $columnName === BaseModel::KEY_UUID);
+
+            if ($filterKeyColumn->isNotEmpty()) {
                 $model->uuid = (string) Uuid::uuid4();
             }
         });

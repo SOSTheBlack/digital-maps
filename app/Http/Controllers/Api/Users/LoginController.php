@@ -37,9 +37,13 @@ final class LoginController extends UserController
     }
 
     /**
+     * @param  LoginRequest  $request
+     *
+     * @return void
+     *
      * @throws AppException
      */
-    private function authAttempt(LoginRequest $request)
+    private function authAttempt(LoginRequest $request): void
     {
         if (! Auth::attempt($request->only('email', 'password'))) {
             throw new AppException('Invalid login details');
