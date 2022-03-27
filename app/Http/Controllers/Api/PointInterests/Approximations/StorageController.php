@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\Api\PointInterests\Approximations;
 
 use App\Http\Requests\Api\PointInterests\Approximations\StorageRequest;
-use App\Http\Resources\ApproximationResource;
 use App\Http\Resources\PointInterestResource;
-use App\Models\Approximation;
 use App\Services\Proximity\ProximityService;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 

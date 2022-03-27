@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Database\Factories\UserFactory;
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
@@ -36,7 +35,6 @@ use Ramsey\Uuid\Uuid;
  * @property-read int|null $point_interests_count
  * @property-read Collection|\App\Models\PersonalAccessToken[] $tokens
  * @property-read int|null $tokens_count
- * @property string $token
  * @method static \Database\Factories\UserFactory factory(...$parameters)
  * @method static Builder|User newModelQuery()
  * @method static Builder|User newQuery()

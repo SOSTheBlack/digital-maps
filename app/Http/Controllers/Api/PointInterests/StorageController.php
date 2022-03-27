@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Api\PointInterests;
 
 use App\Http\Requests\Api\PointInterests\StorageRequest;
 use App\Http\Resources\PointInterestResource;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 final class StorageController extends PointInterestController
 {

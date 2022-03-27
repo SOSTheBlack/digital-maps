@@ -18,12 +18,13 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @property string $uuid
  * @property int $latitude
  * @property int $longitude
+ * @property int $meters
  * @property Carbon $time
- * @property string $meters
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $deleted_at
- * @property-read User|null $owner
+ * @property-read \App\Models\User|null $owner
+ * @method static \Database\Factories\ApproximationFactory factory(...$parameters)
  * @method static Builder|Approximation newModelQuery()
  * @method static Builder|Approximation newQuery()
  * @method static Builder|Approximation query()

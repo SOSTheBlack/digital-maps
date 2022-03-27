@@ -3,7 +3,6 @@
 namespace App\Services\Proximity;
 
 use App\Models\Approximation;
-use App\Models\PointInterest;
 use App\Repositories\Contracts\PointInterestRepository;
 use App\Services\Proximity\Contracts\ProximityContract;
 use Illuminate\Database\Eloquent\Collection;
