@@ -9,12 +9,14 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  *
  * @package namespace App\Repositories\Contracts;
  */
-interface PointInterestRepository extends RepositoryInterface
+interface PointInterestRepository extends RepositoryInterface, BaseRepositoryContracts
 {
     /**
-     * Get the fillable attributes for the model.
+     * @param  int  $latitude
+     * @param  int  $longitude
+     * @param  int  $meters
      *
-     * @return array
+     * @return mixed
      */
-    public function getFillable(): array;
+    public function searchProximity(int $latitude, int $longitude, int $meters): \Illuminate\Database\Eloquent\Collection;
 }

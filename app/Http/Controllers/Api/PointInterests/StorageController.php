@@ -4,10 +4,8 @@ namespace App\Http\Controllers\Api\PointInterests;
 
 use App\Http\Requests\Api\PointInterests\StorageRequest;
 use App\Http\Resources\PointInterestResource;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
-class StorageController extends PointInterestController
+final class StorageController extends PointInterestController
 {
     /**
      * Handle the incoming request.
@@ -16,11 +14,9 @@ class StorageController extends PointInterestController
      *
      * @return PointInterestResource
      */
-    public function __invoke(StorageRequest $request)
+    final public function __invoke(StorageRequest $request): PointInterestResource
     {
-        $fillable = $this->pointInterestRepository->getFillable();
-        $data = $request->only($fillable);
-        $newPointInterest = $this->pointInterestRepository->create($data);
+        $newPointInterest = $this->pointInterestRepository->createByRequest($request);
 
         return new PointInterestResource($newPointInterest);
     }

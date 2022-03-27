@@ -5,7 +5,6 @@ namespace App\Repositories;
 use App\Models\User;
 use App\Repositories\Contracts\UserRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Exceptions\RepositoryException;
 
 /**
@@ -46,5 +45,4 @@ class UserRepositoryEloquent extends BaseRepository implements UserRepository
     {
         return $user->createToken('auth_token')->plainTextToken;
     }
-
 }

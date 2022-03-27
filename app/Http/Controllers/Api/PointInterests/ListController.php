@@ -6,7 +6,7 @@ use App\Http\Requests\Api\PointInterests\ListRequest;
 use App\Http\Resources\PointInterestResource;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
-class ListController extends PointInterestController
+final class ListController extends PointInterestController
 {
     /**
      * Handle the incoming request.
@@ -15,7 +15,7 @@ class ListController extends PointInterestController
      *
      * @return PointInterestResource|AnonymousResourceCollection
      */
-    public function __invoke(ListRequest $request): PointInterestResource|AnonymousResourceCollection
+    final public function __invoke(ListRequest $request): PointInterestResource|AnonymousResourceCollection
     {
         return PointInterestResource::collection($this->pointInterestRepository->paginate());
     }

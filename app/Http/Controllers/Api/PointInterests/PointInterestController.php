@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api\PointInterests;
 use App\Http\Controllers\Api\ApiController;
 use App\Repositories\Contracts\PointInterestRepository;
 
-class PointInterestController extends ApiController
+abstract class PointInterestController extends ApiController
 {
     /**
      * @var PointInterestRepository

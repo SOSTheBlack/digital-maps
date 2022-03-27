@@ -4,8 +4,8 @@ namespace App\Repositories;
 
 use App\Models\PointInterest;
 use App\Repositories\Contracts\PointInterestRepository;
+use Illuminate\Database\Eloquent\Collection;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Exceptions\RepositoryException;
 
 /**
@@ -35,13 +35,15 @@ class PointInterestRepositoryEloquent extends BaseRepository implements PointInt
         $this->pushCriteria(app(RequestCriteria::class));
     }
 
-    /**
-     * Get the fillable attributes for the model.
-     *
-     * @return array
-     */
-    public function getFillable(): array
+    public function searchProximity(int $latitude, int $longitude, int $meters): Collection
     {
-        return $this->model->getFillable();
+        return $this->model
+            ->whereBetween('latitude', [
+                $latitude - $meters,
+                $latitude + $meters
+            ])->whereBetween('longitude', [
+                $longitude - $meters,
+                $longitude + $meters
+            ])->get();
     }
 }

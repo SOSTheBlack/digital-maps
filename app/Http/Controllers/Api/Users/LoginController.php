@@ -10,7 +10,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class LoginController extends UserController
+final class LoginController extends UserController
 {
     /**
      * Handle the incoming request.
@@ -19,7 +19,7 @@ class LoginController extends UserController
      *
      * @return JsonResponse|UserResource
      */
-    public function __invoke(LoginRequest $request): JsonResponse|UserResource
+    final public function __invoke(LoginRequest $request): JsonResponse|UserResource
     {
         try {
             $this->authAttempt($request);

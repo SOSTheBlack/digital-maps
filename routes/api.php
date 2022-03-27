@@ -11,10 +11,14 @@ Route::middleware('auth:sanctum')->group(function () {
         })->name('users.me');
     });
 
-    Route::prefix('point-interests')->namespace('PointInterests')->name('point-interests.')->group(function () {
+    Route::prefix('/point-interests')->namespace('PointInterests')->name('point-interests.')->group(function () {
         Route::get('/')->name('list')->uses('ListController');
         Route::post('/approximation')->name('approximation')->uses('ListApproximationController');
         Route::post('/')->name('storage')->uses('StorageController');
+
+        Route::prefix('/approximations')->namespace('Approximations')->name('approximations.')->group(function () {
+            Route::post('/')->name('storage')->uses('StorageController');
+        });
     });
 });
 

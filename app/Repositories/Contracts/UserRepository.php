@@ -10,7 +10,7 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  *
  * @package namespace App\Repositories\Contracts;
  */
-interface UserRepository extends RepositoryInterface
+interface UserRepository extends RepositoryInterface, BaseRepositoryContracts
 {
     /**
      * Create new token for user.

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends Factory
  */
-class PointInterestFactory extends Factory
+class ApproximationFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,11 +19,10 @@ class PointInterestFactory extends Factory
     {
         return [
             'user_id' => User::factory(),
-            'name' => $this->faker->company(),
             'latitude' => $this->faker->randomNumber(2, true),
             'longitude' => $this->faker->randomNumber(2, true),
-            'opened' => $this->faker->time('H:i'),
-            'closed' => $this->faker->time('H:i'),
+            'meters' => $this->faker->biasedNumberBetween(5, 30),
+            'time' => $this->faker->time('H:i'),
         ];
     }
 

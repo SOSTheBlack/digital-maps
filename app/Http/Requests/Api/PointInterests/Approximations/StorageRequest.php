@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Api\PointInterests;
+namespace App\Http\Requests\Api\PointInterests\Approximations;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -31,11 +31,10 @@ class StorageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'min:3', 'max:255'],
             'latitude' => ['required', 'numeric', 'gt:0'],
             'longitude' => ['required', 'numeric', 'gt:0'],
-            'opened' => ['nullable', 'date_format:H:i'],
-            'closed' => ['required_if:opened', 'nullable', 'date_format:H:i', 'after:opened'],
+            'meters' => ['required', 'numeric', 'gt:0'],
+            'time' => ['required', 'date_format:H:i'],
         ];
     }
 }

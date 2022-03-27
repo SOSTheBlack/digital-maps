@@ -7,7 +7,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class StorageTest extends TestCase
+class StorageUserTest extends TestCase
 {
     use WithFaker;
     use RefreshDatabase;
