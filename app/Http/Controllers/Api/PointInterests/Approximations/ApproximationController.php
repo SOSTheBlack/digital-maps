@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\PointInterests\Approximations;
 
 use App\Http\Controllers\Api\PointInterests\PointInterestController;
 use App\Repositories\Contracts\ApproximationRepository;
+use App\Services\Proximity\ProximityService;
 
 abstract class ApproximationController extends PointInterestController
 {
@@ -13,10 +14,17 @@ abstract class ApproximationController extends PointInterestController
     protected ApproximationRepository $approximationRepository;
 
     /**
-     * @param  ApproximationRepository  $approximationRepository
+     * @var ProximityService
      */
-    public function __construct(ApproximationRepository $approximationRepository)
+    protected ProximityService $proximityService;
+
+    /**
+     * @param  ApproximationRepository  $approximationRepository
+     * @param  ProximityService  $proximityService
+     */
+    public function __construct(ApproximationRepository $approximationRepository, ProximityService $proximityService)
     {
         $this->approximationRepository = $approximationRepository;
+        $this->proximityService = $proximityService;
     }
 }
