@@ -7,7 +7,7 @@ use App\Http\Resources\PointInterestResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class StorageController extends PointInterestController
+final class StorageController extends PointInterestController
 {
     /**
      * Handle the incoming request.

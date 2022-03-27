@@ -7,10 +7,9 @@ use App\Http\Requests\Api\Users\StorageUserRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 use Throwable;
 
-class StorageController extends UserController
+final class StorageController extends UserController
 {
     /**
      * Handle the incoming request.

@@ -10,7 +10,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class LoginController extends UserController
+final class LoginController extends UserController
 {
     /**
      * Handle the incoming request.

@@ -6,7 +6,7 @@ use App\Http\Requests\Api\PointInterests\ListApproximationRequest;
 use App\Http\Resources\PointInterestResource;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
-class ListApproximationController extends PointInterestController
+final class ListApproximationController extends PointInterestController
 {
     /**
      * Handle the incoming request.
