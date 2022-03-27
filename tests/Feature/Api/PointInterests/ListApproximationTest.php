@@ -37,7 +37,7 @@ class ListApproximationTest extends TestCase
             ->assertJsonCount(4, 'errors')
             ->assertJsonStructure([
                 'message',
-                'errors' =>[
+                'errors' => [
                     'latitude',
                     'longitude',
                     'meters',

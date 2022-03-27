@@ -32,9 +32,11 @@ use Ramsey\Uuid\Uuid;
  * @property Carbon|null $deleted_at
  * @property-read DatabaseNotificationCollection|DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
- * @property-read Collection|PersonalAccessToken[] $tokens
+ * @property-read Collection|\App\Models\PointInterest[] $pointInterests
+ * @property-read int|null $point_interests_count
+ * @property-read Collection|\App\Models\PersonalAccessToken[] $tokens
  * @property-read int|null $tokens_count
- * @method static UserFactory factory(...$parameters)
+ * @method static \Database\Factories\UserFactory factory(...$parameters)
  * @method static Builder|User newModelQuery()
  * @method static Builder|User newQuery()
  * @method static \Illuminate\Database\Query\Builder|User onlyTrashed()
