@@ -19,8 +19,6 @@ final class StorageController extends UserController
      * @param  StorageUserRequest  $request
      *
      * @return UserResource|JsonResponse
-     *
-     * @throws AppException
      */
     final public function __invoke(StorageUserRequest $request): UserResource|JsonResponse
     {
@@ -34,11 +32,10 @@ final class StorageController extends UserController
             DB::commit();
 
             return new UserResource($newUser);
-        } catch (Throwable $exception) {
+        } catch (Throwable) {
             try {
                 DB::rollBack();
-            } catch (Throwable $e) {
-                throw new AppException(__('error creating user'));
+            } catch (Throwable) {
             }
 
             return response()->json(['message' => 'error creating user'], Response::HTTP_BAD_REQUEST);
