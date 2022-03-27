@@ -3,6 +3,7 @@
 namespace App\Services\Proximity;
 
 use App\Models\Approximation;
+use App\Models\PointInterest;
 use App\Repositories\Contracts\PointInterestRepository;
 use App\Services\Proximity\Contracts\ProximityContract;
 use Illuminate\Database\Eloquent\Collection;
@@ -24,7 +25,7 @@ class ProximityService implements ProximityContract
      *
      * @param  Approximation  $approximation
      *
-     * @return Collection
+     * @return Collection[PointInterest]
      */
     public function search(Approximation $approximation): Collection
     {
