@@ -7,7 +7,7 @@ use Illuminate\Database\Migrations\Migration;
 /**
  * Class CreateApproximationsTable.
  */
-class CreateApproximationsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -22,8 +22,8 @@ class CreateApproximationsTable extends Migration
             $table->uuid();
             $table->integer('latitude');
             $table->integer('longitude');
-            $table->integer('time');
-            $table->time('meters');
+            $table->integer('meters');
+            $table->time('time');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -38,4 +38,4 @@ class CreateApproximationsTable extends Migration
     {
         Schema::drop('approximations');
     }
-}
+};

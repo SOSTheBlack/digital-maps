@@ -2,18 +2,17 @@
 
 namespace App\Repositories;
 
-use Prettus\Repository\Eloquent\BaseRepository;
-use Prettus\Repository\Criteria\RequestCriteria;
-use App\Repositories\Contracts\ApproximationRepository;
 use App\Models\Approximation;
-use App\Validators\ApproximationValidator;
+use App\Repositories\Contracts\ProximityRepository;
+use Prettus\Repository\Criteria\RequestCriteria;
+use Prettus\Repository\Exceptions\RepositoryException;
 
 /**
  * Class ApproximationRepositoryEloquent.
  *
  * @package namespace App\Repositories;
  */
-class ApproximationRepositoryEloquent extends BaseRepository implements ApproximationRepository
+final class ProximityRepositoryEloquent extends BaseRepository implements ProximityRepository
 {
     /**
      * Specify Model class name
@@ -25,14 +24,13 @@ class ApproximationRepositoryEloquent extends BaseRepository implements Approxim
         return Approximation::class;
     }
 
-    
-
     /**
      * Boot up the repository, pushing criteria
+     *
+     * @throws RepositoryException
      */
     public function boot()
     {
         $this->pushCriteria(app(RequestCriteria::class));
     }
-    
 }
