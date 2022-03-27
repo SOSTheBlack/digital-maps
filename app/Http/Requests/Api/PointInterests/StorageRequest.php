@@ -20,7 +20,7 @@ class StorageRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return auth()->check();
     }
 
     /**
@@ -35,7 +35,7 @@ class StorageRequest extends FormRequest
             'latitude' => ['required', 'numeric', 'gt:0'],
             'longitude' => ['required', 'numeric', 'gt:0'],
             'opened' => ['nullable', 'date_format:H:i'],
-            'closed' => ['nullable', 'date_format:H:i', 'after:opened'],
+            'closed' => ['required_if:opened', 'nullable', 'date_format:H:i', 'after:opened'],
         ];
     }
 }

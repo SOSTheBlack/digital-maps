@@ -1,22 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\Api\PointInterests\Proximity;
+namespace App\Http\Controllers\Api\PointInterests\Approximations;
 
 use App\Http\Controllers\Api\PointInterests\PointInterestController;
-use App\Repositories\Contracts\ProximityRepository;
+use App\Repositories\Contracts\ApproximationRepository;
 
-abstract class ProximityController extends PointInterestController
+abstract class ApproximationController extends PointInterestController
 {
     /**
-     * @var ProximityRepository
+     * @var ApproximationRepository
      */
-    protected ProximityRepository $proximityRepository;
+    protected ApproximationRepository $approximationRepository;
 
     /**
-     * @param  ProximityRepository  $proximityRepository
+     * @param  ApproximationRepository  $approximationRepository
      */
-    public function __construct(ProximityRepository $proximityRepository)
+    public function __construct(ApproximationRepository $approximationRepository)
     {
-        $this->proximityRepository = $proximityRepository;
+        $this->approximationRepository = $approximationRepository;
     }
 }

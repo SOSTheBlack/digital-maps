@@ -15,7 +15,7 @@ final class ListController extends PointInterestController
      *
      * @return PointInterestResource|AnonymousResourceCollection
      */
-    public function __invoke(ListRequest $request): PointInterestResource|AnonymousResourceCollection
+    final public function __invoke(ListRequest $request): PointInterestResource|AnonymousResourceCollection
     {
         return PointInterestResource::collection($this->pointInterestRepository->paginate());
     }

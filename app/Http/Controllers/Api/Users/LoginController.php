@@ -19,7 +19,7 @@ final class LoginController extends UserController
      *
      * @return JsonResponse|UserResource
      */
-    public function __invoke(LoginRequest $request): JsonResponse|UserResource
+    final public function __invoke(LoginRequest $request): JsonResponse|UserResource
     {
         try {
             $this->authAttempt($request);

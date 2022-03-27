@@ -9,7 +9,7 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  *
  * @package namespace App\Repositories\Contracts;
  */
-interface PointInterestRepository extends RepositoryInterface
+interface PointInterestRepository extends RepositoryInterface, BaseRepositoryContracts
 {
     /**
      * Get the fillable attributes for the model.

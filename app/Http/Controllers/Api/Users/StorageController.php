@@ -20,7 +20,7 @@ final class StorageController extends UserController
      *
      * @throws AppException
      */
-    public function __invoke(StorageUserRequest $request): UserResource
+    final public function __invoke(StorageUserRequest $request): UserResource
     {
         try {
             DB::beginTransaction();

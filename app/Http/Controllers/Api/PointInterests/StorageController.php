@@ -16,11 +16,9 @@ final class StorageController extends PointInterestController
      *
      * @return PointInterestResource
      */
-    public function __invoke(StorageRequest $request)
+    final public function __invoke(StorageRequest $request): PointInterestResource
     {
-        $fillable = $this->pointInterestRepository->getFillable();
-        $data = $request->only($fillable);
-        $newPointInterest = $this->pointInterestRepository->create($data);
+        $newPointInterest = $this->pointInterestRepository->createByRequest($request);
 
         return new PointInterestResource($newPointInterest);
     }

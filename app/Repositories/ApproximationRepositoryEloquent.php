@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Approximation;
-use App\Repositories\Contracts\ProximityRepository;
+use App\Repositories\Contracts\ApproximationRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
 use Prettus\Repository\Exceptions\RepositoryException;
 
@@ -12,7 +12,7 @@ use Prettus\Repository\Exceptions\RepositoryException;
  *
  * @package namespace App\Repositories;
  */
-final class ProximityRepositoryEloquent extends BaseRepository implements ProximityRepository
+final class ApproximationRepositoryEloquent extends BaseRepository implements ApproximationRepository
 {
     /**
      * Specify Model class name

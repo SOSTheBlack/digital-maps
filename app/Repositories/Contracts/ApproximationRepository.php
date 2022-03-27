@@ -9,7 +9,7 @@ use Prettus\Repository\Contracts\RepositoryInterface;
  *
  * @package namespace App\Repositories\Contracts;
  */
-interface ProximityRepository extends RepositoryInterface, BaseRepositoryContracts
+interface ApproximationRepository extends RepositoryInterface, BaseRepositoryContracts
 {
     //
 }

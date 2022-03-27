@@ -5,7 +5,6 @@ namespace App\Repositories;
 use App\Models\PointInterest;
 use App\Repositories\Contracts\PointInterestRepository;
 use Prettus\Repository\Criteria\RequestCriteria;
-use Prettus\Repository\Eloquent\BaseRepository;
 use Prettus\Repository\Exceptions\RepositoryException;
 
 /**
@@ -33,15 +32,5 @@ class PointInterestRepositoryEloquent extends BaseRepository implements PointInt
     public function boot()
     {
         $this->pushCriteria(app(RequestCriteria::class));
-    }
-
-    /**
-     * Get the fillable attributes for the model.
-     *
-     * @return array
-     */
-    public function getFillable(): array
-    {
-        return $this->model->getFillable();
     }
 }

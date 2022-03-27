@@ -2,8 +2,6 @@
 
 namespace Tests\Feature\Api\PointInterests;
 
-use App\Models\PointInterest;
-use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\Feature\Api\ApiTestHelper;

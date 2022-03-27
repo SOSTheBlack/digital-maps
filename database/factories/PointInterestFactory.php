@@ -22,8 +22,8 @@ class PointInterestFactory extends Factory
             'name' => $this->faker->company(),
             'latitude' => $this->faker->randomNumber(2, true),
             'longitude' => $this->faker->randomNumber(2, true),
-            'opened' => '09:00',
-            'closed' => '18:00',
+            'opened' => $this->faker->time('H:i'),
+            'closed' => $this->faker->time('H:i'),
         ];
     }
 
