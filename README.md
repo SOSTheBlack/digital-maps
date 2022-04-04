@@ -6,7 +6,8 @@
 # Dev Test BackEnd
 
 ## Instalação
+````shell
+./vendor/bin/sail up
+````
 
-## Configuração
-
-## Documentação
+## Configuração## Documentação
