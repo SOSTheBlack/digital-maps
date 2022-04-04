@@ -5,7 +5,7 @@ namespace App\Observers;
 use App\Helpers\AuthTrait;
 use App\Models\PointInterest;
 
-class PointInterestObserver
+final class PointInterestObserver
 {
     use AuthTrait;
 

@@ -26,8 +26,10 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property Carbon|null $deleted_at
- * @property-read \App\Models\User|null $owner
- * @method static \Database\Factories\PointInterestFactory factory(...$parameters)
+ *
+ * @property-read User|null $owner
+ *
+ * @method static PointInterestFactory factory(...$parameters)
  * @method static \Illuminate\Database\Eloquent\Builder|PointInterest newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|PointInterest newQuery()
  * @method static Builder|PointInterest onlyTrashed()
@@ -45,6 +47,7 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|PointInterest whereUuid($value)
  * @method static Builder|PointInterest withTrashed()
  * @method static Builder|PointInterest withoutTrashed()
+ *
  * @mixin Eloquent
  */
 class PointInterest extends BaseModel implements Transformable
@@ -65,7 +68,7 @@ class PointInterest extends BaseModel implements Transformable
         'latitude',
         'longitude',
         'opened',
-        'closed'
+        'closed',
     ];
 
     /**
@@ -77,7 +80,7 @@ class PointInterest extends BaseModel implements Transformable
         'latitude' => 'int',
         'longitude' => 'int',
         'opened' => 'datetime:H:i',
-        'closed' => 'datetime:H:i'
+        'closed' => 'datetime:H:i',
     ];
 
     /**

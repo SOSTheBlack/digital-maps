@@ -13,6 +13,7 @@ use Ramsey\Uuid\Uuid;
  * @method static Builder|BaseModel newModelQuery()
  * @method static Builder|BaseModel newQuery()
  * @method static Builder|BaseModel query()
+ *
  * @mixin Eloquent
  */
 abstract class BaseModel extends Model
@@ -22,7 +23,7 @@ abstract class BaseModel extends Model
      *
      * @const string
      */
-    public const KEY_UUID = "uuid";
+    public const KEY_UUID = 'uuid';
 
     /**
      * Bootstrap the model and its traits.
@@ -34,7 +35,6 @@ abstract class BaseModel extends Model
         parent::boot();
 
         self::creating(function ($model) {
-            /** @var array $fillable */
             $fillable = $model->getFillable();
             $filterKeyColumn = collect($fillable)->filter(fn (string $columnName) => $columnName === self::KEY_UUID);
 

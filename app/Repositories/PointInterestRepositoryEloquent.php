@@ -51,10 +51,10 @@ class PointInterestRepositoryEloquent extends BaseRepository implements PointInt
         return $this->model
             ->whereBetween('latitude', [
                 $latitude - $meters,
-                $latitude + $meters
+                $latitude + $meters,
             ])->whereBetween('longitude', [
                 $longitude - $meters,
-                $longitude + $meters
+                $longitude + $meters,
             ])->get();
     }
 }

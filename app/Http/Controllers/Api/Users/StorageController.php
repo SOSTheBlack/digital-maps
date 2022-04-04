@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Api\Users;
 
-use App\Exceptions\AppException;
 use App\Http\Requests\Api\Users\StorageUserRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
@@ -32,10 +31,13 @@ final class StorageController extends UserController
             DB::commit();
 
             return new UserResource($newUser);
-        } catch (Throwable) {
+        } catch (Throwable $e) {
+            \Log::error('error creating user', $e->getTrace());
+
             try {
                 DB::rollBack();
-            } catch (Throwable) {
+            } catch (Throwable $e) {
+                \Log::error('error creating user', $e->getTrace());
             }
 
             return response()->json(['message' => 'error creating user'], Response::HTTP_BAD_REQUEST);

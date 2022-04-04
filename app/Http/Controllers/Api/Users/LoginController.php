@@ -32,7 +32,7 @@ final class LoginController extends UserController
             return new UserResource($user);
         } catch (Throwable $exception) {
             return response()->json([
-                'message' => $exception->getMessage()
+                'message' => $exception->getMessage(),
             ], Response::HTTP_UNAUTHORIZED);
         }
     }

@@ -18,7 +18,7 @@ class PointInterestResource extends JsonResource
      *
      * @return array
      */
-    public function toArray($request): array
+    public function toArray(): array
     {
         return [
             'uuid' => $this->uuid,
@@ -29,7 +29,7 @@ class PointInterestResource extends JsonResource
             'closed' => $this->closed?->format('H:i'),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
-            'owner' => new UserResource($this->owner)
+            'owner' => new UserResource($this->owner),
         ];
     }
 }

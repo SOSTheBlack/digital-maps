@@ -19,7 +19,7 @@ class UserResource extends JsonResource
      *
      * @return array
      */
-    public function toArray($request): array
+    public function toArray(): array
     {
         $fields = collect([
             'uuid' => $this->uuid,
