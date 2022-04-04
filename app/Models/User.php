@@ -106,7 +106,7 @@ final class User extends Authenticatable
         self::creating(function ($model) {
             /** @var array $fillable */
             $fillable = $model->getFillable();
-            $filterKeyColumn = collect($fillable)->filter(fn(string $columnName) => $columnName === BaseModel::KEY_UUID);
+            $filterKeyColumn = collect($fillable)->filter(fn (string $columnName) => $columnName === BaseModel::KEY_UUID);
 
             if ($filterKeyColumn->isNotEmpty()) {
                 $model->uuid = (string) Uuid::uuid4();
@@ -128,8 +128,8 @@ final class User extends Authenticatable
     public function token(): Attribute
     {
         return Attribute::make(
-            get: fn($value) => $value,
-            set: fn($value) => $value
+            get: fn ($value) => $value,
+            set: fn ($value) => $value
         );
     }
 }

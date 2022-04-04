@@ -36,7 +36,7 @@ abstract class BaseModel extends Model
         self::creating(function ($model) {
             /** @var array $fillable */
             $fillable = $model->getFillable();
-            $filterKeyColumn = collect($fillable)->filter(fn(string $columnName) => $columnName === self::KEY_UUID);
+            $filterKeyColumn = collect($fillable)->filter(fn (string $columnName) => $columnName === self::KEY_UUID);
 
             if ($filterKeyColumn->isNotEmpty()) {
                 $model->uuid = (string) Uuid::uuid4();

@@ -26,5 +26,3 @@ Route::prefix('users')->namespace('Users')->name('users.')->group(function () {
     Route::post('/storage')->name('storage')->uses('StorageController');
     Route::post('/login')->name('login')->uses('LoginController');
 });
-
-
