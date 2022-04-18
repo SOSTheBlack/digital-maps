@@ -35,6 +35,7 @@ abstract class BaseModel extends Model
         parent::boot();
 
         self::creating(function ($model) {
+            /** @var array $fillable */
             $fillable = $model->getFillable();
             $filterKeyColumn = collect($fillable)->filter(fn (string $columnName) => $columnName === self::KEY_UUID);
 

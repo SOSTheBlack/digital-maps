@@ -6,6 +6,7 @@ use App\Exceptions\AppException;
 use App\Http\Requests\Api\Users\LoginRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
+use Illuminate\Support\Collection;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,8 +26,11 @@ final class LoginController extends UserController
         try {
             $this->authAttempt($request);
 
+            /** @var Collection $userCollection */
+            $userCollection = $this->userRepository->findByField('email', $request['email']);
+
             /** @var User $user */
-            $user = $this->userRepository->findByField('email', $request['email'])->first();
+            $user = $userCollection->first();
             $this->userRepository->generateToken($user);
 
             return new UserResource($user);

@@ -18,7 +18,7 @@ class PointInterestResource extends JsonResource
      *
      * @return array
      */
-    public function toArray(): array
+    public function toArray($request): array
     {
         return [
             'uuid' => $this->uuid,

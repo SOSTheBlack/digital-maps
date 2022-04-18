@@ -61,6 +61,12 @@
         ],
         "check-style": [
             "vendor/bin/php-cs-fixer fix --config .php-cs-fixer.php --diff --verbose --dry-run"
+        ],
+        "phpinsights": [
+            "php artisan insights"
+        ],
+        "phpstan": [
+            "./vendor/bin/phpstan analyse"
         ]
     },
     "extra": {
