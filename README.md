@@ -1,10 +1,10 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://www.cabecadelab.com.br/tmp/logoluizalabs.png" width="400"></a></p>
+![LuizaLabs](./repo/logoluizalabs.png)
 
 # Sumário
 - [Introdução](#Introdução)
 - [Arquitetura](#Arquitetura)
 - [Instalação](#Instalação)
-- [Qualidade do Código](#Qualidade do Código)
+- [Qualidade](#Qualidade)
 - [Documentação](#Documentação)
 
 # Introdução
@@ -33,6 +33,8 @@ Os _observers_ são utilizados para ouvirem eventos de um determinado modelo
 ``\App\Observers\PointInterestObserver``: Responsável por definir o usuário logado como criador do ponto de interesse recém registrado.
 
 ``\App\Observers\UserObserver``: Responsável por criptografar a senha do usuário recém-criado.
+
+Todos os _observers_ são carregados automaticamente através do provider ``\App\Providers\ObserverServiceProvider``.
 
 ### Repositório
 
