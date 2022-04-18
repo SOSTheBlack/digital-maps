@@ -82,42 +82,6 @@ class StorageApproximationTest extends TestCase
             ]);
     }
 
-    public function test_approximations()
-    {
-        $interest24 = PointInterest::factory()->create([
-            'name' => 'Aberto24',
-            'latitude' => '10',
-            'longitude' => '10',
-        ]);
-        $interestCommercial = PointInterest::factory()->create([
-            'name' => 'Comercial',
-            'latitude' => '30',
-            'longitude' => '30',
-            'opened' => '08:00',
-            'closed' => '18:00'
-        ]);
-    }
-
-    public function approximationsDataProvider()
-    {
-        return [
-            [
-                PointInterest::factory()->create([
-                    'name' => 'Aberto24',
-                    'latitude' => '10',
-                    'longitude' => '10',
-                ]),
-                PointInterest::factory()->create([
-                    'name' => 'Comercial',
-                    'latitude' => '30',
-                    'longitude' => '30',
-                    'opened' => '08:00',
-                    'closed' => '18:00'
-                ])
-            ],
-        ];
-    }
-
     public function missingFieldsRequired(): array
     {
         return [
