@@ -19,7 +19,7 @@ final class StorageController extends UserController
      *
      * @return UserResource|JsonResponse
      */
-    final public function __invoke(StorageUserRequest $request): UserResource|JsonResponse
+    public function __invoke(StorageUserRequest $request): UserResource|JsonResponse
     {
         try {
             DB::beginTransaction();

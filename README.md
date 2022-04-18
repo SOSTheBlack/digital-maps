@@ -111,7 +111,17 @@ sail composer phpstan
 
 ![LaravelStan](./repo/phpstan.png "PHP Stan")
 
-### sail composer phpinsights
+### PHPInsights
+
+O [PHPInsights](https://phpinsights.com/) analisa a qualidade do código. Ele divide a análise em quatro categorias: código, complexidade (complexidade ciclomática etc), arquitetura (tamanho de métodos e classes, entre outras análises) e estilo de código (formatação, padronização).
+
+Para executar esse analisador de código, basta executar o comando abaixo:
+
+````shell
+sail composer phpinsights
+````
+
+![PHPInsights](./repo/phpinsights.png)
 
 ## Documentação
 
@@ -122,8 +132,3 @@ A documentação do aplicativo pode ser importado para o seu Postman através do
 ![Documentação](./repo/postman.png "Documentação")
 
 ## Configuração
-
-
-sail composer phpstan
-
-sail composer phpinsights

@@ -14,7 +14,7 @@ final class StorageController extends PointInterestController
      *
      * @return PointInterestResource
      */
-    final public function __invoke(StorageRequest $request): PointInterestResource
+    public function __invoke(StorageRequest $request): PointInterestResource
     {
         $newPointInterest = $this->pointInterestRepository->createByRequest($request);
 

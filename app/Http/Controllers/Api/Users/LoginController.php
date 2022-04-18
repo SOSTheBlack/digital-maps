@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Api\Users;
 
-use App\Exceptions\AppException;
+use App\Exceptions\DigitalMapsThrowable;
 use App\Http\Requests\Api\Users\LoginRequest;
 use App\Http\Resources\UserResource;
 use App\Models\User;
-use Illuminate\Support\Collection;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 use Throwable;
@@ -21,7 +21,7 @@ final class LoginController extends UserController
      *
      * @return JsonResponse|UserResource
      */
-    final public function __invoke(LoginRequest $request): JsonResponse|UserResource
+    public function __invoke(LoginRequest $request): JsonResponse|UserResource
     {
         try {
             $this->authAttempt($request);
@@ -46,12 +46,12 @@ final class LoginController extends UserController
      *
      * @return void
      *
-     * @throws AppException
+     * @throws DigitalMapsThrowable
      */
     private function authAttempt(LoginRequest $request): void
     {
         if (! Auth::attempt($request->only('email', 'password'))) {
-            throw new AppException('Invalid login details');
+            throw new DigitalMapsThrowable('Invalid login details');
         }
     }
 }

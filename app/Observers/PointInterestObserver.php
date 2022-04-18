@@ -2,12 +2,12 @@
 
 namespace App\Observers;
 
-use App\Helpers\AuthTrait;
+use App\Helpers\AuthUser;
 use App\Models\PointInterest;
 
 final class PointInterestObserver
 {
-    use AuthTrait;
+    use AuthUser;
 
     /**
      * Handle the PointInterest "creating" event.

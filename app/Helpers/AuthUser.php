@@ -7,7 +7,7 @@ use App\Models\User;
 /**
  * @property User $user
  */
-trait AuthTrait
+trait AuthUser
 {
     /**
      * @var User|null

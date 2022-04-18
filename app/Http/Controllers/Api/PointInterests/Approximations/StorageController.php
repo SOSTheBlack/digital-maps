@@ -14,7 +14,7 @@ final class StorageController extends ApproximationController
      *
      * @return AnonymousResourceCollection
      */
-    final public function __invoke(StorageRequest $request): AnonymousResourceCollection
+    public function __invoke(StorageRequest $request): AnonymousResourceCollection
     {
         /** @var Approximation $newApproximation */
         $newApproximation = $this->approximationRepository->createByRequest($request);
