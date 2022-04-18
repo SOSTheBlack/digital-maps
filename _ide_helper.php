@@ -1,4 +1,5 @@
 <?php
+
 // @formatter:off
 // phpcs:ignoreFile
 
@@ -16161,7 +16162,7 @@
                 return $instance->renderTranslation();
             }
         }
-     
+
 }
 
     namespace Illuminate\Support {
@@ -16186,7 +16187,7 @@
         class Str
         {
         }
-     
+
 }
 
         namespace Spatie\LaravelIgnition\Facades {
@@ -16564,7 +16565,7 @@
                 return $instance->group($groupName, $properties);
             }
         }
-     
+
 }
 
     namespace Illuminate\Http {
@@ -16633,9 +16634,8 @@
                 return \Illuminate\Http\Request::hasValidSignatureWhileIgnoring($ignoreQuery, $absolute);
             }
         }
-     
-}
 
+}
 
 namespace  {
             class App extends \Illuminate\Support\Facades\App
@@ -16691,7 +16691,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->make($attributes);
                 }
-             
+
                 /**
              * Register a new global scope.
              *
@@ -16705,7 +16705,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->withGlobalScope($identifier, $scope);
                 }
-             
+
                 /**
              * Remove a registered global scope.
              *
@@ -16718,7 +16718,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->withoutGlobalScope($scope);
                 }
-             
+
                 /**
              * Remove all or passed registered global scopes.
              *
@@ -16731,7 +16731,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->withoutGlobalScopes($scopes);
                 }
-             
+
                 /**
              * Get an array of global scopes that were removed from the query.
              *
@@ -16743,7 +16743,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->removedScopes();
                 }
-             
+
                 /**
              * Add a where clause on the primary key to the query.
              *
@@ -16756,7 +16756,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->whereKey($id);
                 }
-             
+
                 /**
              * Add a where clause on the primary key to the query.
              *
@@ -16769,7 +16769,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->whereKeyNot($id);
                 }
-             
+
                 /**
              * Add a basic where clause to the query.
              *
@@ -16785,7 +16785,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->where($column, $operator, $value, $boolean);
                 }
-             
+
                 /**
              * Add a basic where clause to the query, and return the first result.
              *
@@ -16801,7 +16801,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->firstWhere($column, $operator, $value, $boolean);
                 }
-             
+
                 /**
              * Add an "or where" clause to the query.
              *
@@ -16816,7 +16816,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->orWhere($column, $operator, $value);
                 }
-             
+
                 /**
              * Add a basic "where not" clause to the query.
              *
@@ -16832,7 +16832,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->whereNot($column, $operator, $value, $boolean);
                 }
-             
+
                 /**
              * Add an "or where not" clause to the query.
              *
@@ -16847,7 +16847,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->orWhereNot($column, $operator, $value);
                 }
-             
+
                 /**
              * Add an "order by" clause for a timestamp to the query.
              *
@@ -16860,7 +16860,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->latest($column);
                 }
-             
+
                 /**
              * Add an "order by" clause for a timestamp to the query.
              *
@@ -16873,7 +16873,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->oldest($column);
                 }
-             
+
                 /**
              * Create a collection of models from plain arrays.
              *
@@ -16886,7 +16886,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->hydrate($items);
                 }
-             
+
                 /**
              * Create a collection of models from a raw query.
              *
@@ -16900,7 +16900,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->fromQuery($query, $bindings);
                 }
-             
+
                 /**
              * Find a model by its primary key.
              *
@@ -16914,7 +16914,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->find($id, $columns);
                 }
-             
+
                 /**
              * Find multiple models by their primary keys.
              *
@@ -16928,7 +16928,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->findMany($ids, $columns);
                 }
-             
+
                 /**
              * Find a model by its primary key or throw an exception.
              *
@@ -16943,7 +16943,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->findOrFail($id, $columns);
                 }
-             
+
                 /**
              * Find a model by its primary key or return fresh model instance.
              *
@@ -16957,7 +16957,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->findOrNew($id, $columns);
                 }
-             
+
                 /**
              * Get the first record matching the attributes or instantiate it.
              *
@@ -16971,7 +16971,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->firstOrNew($attributes, $values);
                 }
-             
+
                 /**
              * Get the first record matching the attributes or create it.
              *
@@ -16985,7 +16985,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->firstOrCreate($attributes, $values);
                 }
-             
+
                 /**
              * Create or update a record matching the attributes, and fill it with values.
              *
@@ -16999,7 +16999,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->updateOrCreate($attributes, $values);
                 }
-             
+
                 /**
              * Execute the query and get the first result or throw an exception.
              *
@@ -17013,7 +17013,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->firstOrFail($columns);
                 }
-             
+
                 /**
              * Execute the query and get the first result or call a callback.
              *
@@ -17027,7 +17027,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->firstOr($columns, $callback);
                 }
-             
+
                 /**
              * Execute the query and get the first result if it's the sole matching record.
              *
@@ -17042,7 +17042,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->sole($columns);
                 }
-             
+
                 /**
              * Get a single column's value from the first result of a query.
              *
@@ -17055,7 +17055,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->value($column);
                 }
-             
+
                 /**
              * Get a single column's value from the first result of a query if it's the sole matching record.
              *
@@ -17070,7 +17070,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->soleValue($column);
                 }
-             
+
                 /**
              * Get a single column's value from the first result of the query or throw an exception.
              *
@@ -17084,7 +17084,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->valueOrFail($column);
                 }
-             
+
                 /**
              * Execute the query as a "select" statement.
              *
@@ -17097,7 +17097,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->get($columns);
                 }
-             
+
                 /**
              * Get the hydrated models without eager loading.
              *
@@ -17110,7 +17110,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->getModels($columns);
                 }
-             
+
                 /**
              * Eager load the relationships for the models.
              *
@@ -17123,7 +17123,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->eagerLoadRelations($models);
                 }
-             
+
                 /**
              * Get a lazy collection for the given query.
              *
@@ -17135,7 +17135,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->cursor();
                 }
-             
+
                 /**
              * Get an array with the values of a given column.
              *
@@ -17149,7 +17149,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->pluck($column, $key);
                 }
-             
+
                 /**
              * Paginate the given query.
              *
@@ -17166,7 +17166,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->paginate($perPage, $columns, $pageName, $page);
                 }
-             
+
                 /**
              * Paginate the given query into a simple paginator.
              *
@@ -17182,7 +17182,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->simplePaginate($perPage, $columns, $pageName, $page);
                 }
-             
+
                 /**
              * Paginate the given query into a cursor paginator.
              *
@@ -17198,7 +17198,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->cursorPaginate($perPage, $columns, $cursorName, $cursor);
                 }
-             
+
                 /**
              * Save a new model and return the instance.
              *
@@ -17211,7 +17211,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->create($attributes);
                 }
-             
+
                 /**
              * Save a new model and return the instance. Allow mass-assignment.
              *
@@ -17224,7 +17224,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->forceCreate($attributes);
                 }
-             
+
                 /**
              * Insert new records or update the existing ones.
              *
@@ -17239,7 +17239,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->upsert($values, $uniqueBy, $update);
                 }
-             
+
                 /**
              * Register a replacement for the default delete function.
              *
@@ -17252,7 +17252,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     $instance->onDelete($callback);
                 }
-             
+
                 /**
              * Call the given local model scopes.
              *
@@ -17265,7 +17265,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->scopes($scopes);
                 }
-             
+
                 /**
              * Apply the scopes to the Eloquent builder instance and return it.
              *
@@ -17277,7 +17277,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->applyScopes();
                 }
-             
+
                 /**
              * Prevent the specified relations from being eager loaded.
              *
@@ -17290,7 +17290,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->without($relations);
                 }
-             
+
                 /**
              * Set the relationships that should be eager loaded while removing any previously added eager loading specifications.
              *
@@ -17303,7 +17303,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->withOnly($relations);
                 }
-             
+
                 /**
              * Create a new instance of the model being queried.
              *
@@ -17316,7 +17316,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->newModelInstance($attributes);
                 }
-             
+
                 /**
              * Apply query-time casts to the model instance.
              *
@@ -17329,7 +17329,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->withCasts($casts);
                 }
-             
+
                 /**
              * Get the underlying query builder instance.
              *
@@ -17341,7 +17341,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->getQuery();
                 }
-             
+
                 /**
              * Set the underlying query builder instance.
              *
@@ -17354,7 +17354,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->setQuery($query);
                 }
-             
+
                 /**
              * Get a base query builder instance.
              *
@@ -17366,7 +17366,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->toBase();
                 }
-             
+
                 /**
              * Get the relationships being eagerly loaded.
              *
@@ -17378,7 +17378,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->getEagerLoads();
                 }
-             
+
                 /**
              * Set the relationships being eagerly loaded.
              *
@@ -17391,7 +17391,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->setEagerLoads($eagerLoad);
                 }
-             
+
                 /**
              * Get the model instance being queried.
              *
@@ -17403,7 +17403,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->getModel();
                 }
-             
+
                 /**
              * Set a model instance for the model being queried.
              *
@@ -17416,7 +17416,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->setModel($model);
                 }
-             
+
                 /**
              * Get the given macro by name.
              *
@@ -17429,7 +17429,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->getMacro($name);
                 }
-             
+
                 /**
              * Checks if a macro is registered.
              *
@@ -17442,7 +17442,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->hasMacro($name);
                 }
-             
+
                 /**
              * Get the given global macro by name.
              *
@@ -17454,7 +17454,7 @@ namespace  {
                 {
                     return \Illuminate\Database\Eloquent\Builder::getGlobalMacro($name);
                 }
-             
+
                 /**
              * Checks if a global macro is registered.
              *
@@ -17466,7 +17466,7 @@ namespace  {
                 {
                     return \Illuminate\Database\Eloquent\Builder::hasGlobalMacro($name);
                 }
-             
+
                 /**
              * Clone the Eloquent query builder.
              *
@@ -17478,7 +17478,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->clone();
                 }
-             
+
                 /**
              * Chunk the results of the query.
              *
@@ -17492,7 +17492,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->chunk($count, $callback);
                 }
-             
+
                 /**
              * Run a map over each item while chunking.
              *
@@ -17506,7 +17506,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->chunkMap($callback, $count);
                 }
-             
+
                 /**
              * Execute a callback over each item while chunking.
              *
@@ -17521,7 +17521,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->each($callback, $count);
                 }
-             
+
                 /**
              * Chunk the results of a query by comparing IDs.
              *
@@ -17537,7 +17537,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->chunkById($count, $callback, $column, $alias);
                 }
-             
+
                 /**
              * Execute a callback over each item while chunking by ID.
              *
@@ -17553,7 +17553,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->eachById($callback, $count, $column, $alias);
                 }
-             
+
                 /**
              * Query lazily, by chunks of the given size.
              *
@@ -17567,7 +17567,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->lazy($chunkSize);
                 }
-             
+
                 /**
              * Query lazily, by chunking the results of a query by comparing IDs.
              *
@@ -17583,7 +17583,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->lazyById($chunkSize, $column, $alias);
                 }
-             
+
                 /**
              * Query lazily, by chunking the results of a query by comparing IDs in descending order.
              *
@@ -17599,7 +17599,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->lazyByIdDesc($chunkSize, $column, $alias);
                 }
-             
+
                 /**
              * Execute the query and get the first result.
              *
@@ -17612,7 +17612,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->first($columns);
                 }
-             
+
                 /**
              * Execute the query and get the first result if it's the sole matching record.
              *
@@ -17627,7 +17627,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->baseSole($columns);
                 }
-             
+
                 /**
              * Pass the query to a given callback.
              *
@@ -17640,7 +17640,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->tap($callback);
                 }
-             
+
                 /**
              * Apply the callback if the given "value" is (or resolves to) truthy.
              *
@@ -17657,7 +17657,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->when($value, $callback, $default);
                 }
-             
+
                 /**
              * Apply the callback if the given "value" is (or resolves to) falsy.
              *
@@ -17674,7 +17674,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->unless($value, $callback, $default);
                 }
-             
+
                 /**
              * Add a relationship count / exists condition to the query.
              *
@@ -17692,7 +17692,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->has($relation, $operator, $count, $boolean, $callback);
                 }
-             
+
                 /**
              * Add a relationship count / exists condition to the query with an "or".
              *
@@ -17707,7 +17707,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->orHas($relation, $operator, $count);
                 }
-             
+
                 /**
              * Add a relationship count / exists condition to the query.
              *
@@ -17722,7 +17722,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->doesntHave($relation, $boolean, $callback);
                 }
-             
+
                 /**
              * Add a relationship count / exists condition to the query with an "or".
              *
@@ -17735,7 +17735,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->orDoesntHave($relation);
                 }
-             
+
                 /**
              * Add a relationship count / exists condition to the query with where clauses.
              *
@@ -17751,7 +17751,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->whereHas($relation, $callback, $operator, $count);
                 }
-             
+
                 /**
              * Add a relationship count / exists condition to the query with where clauses and an "or".
              *
@@ -17767,7 +17767,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->orWhereHas($relation, $callback, $operator, $count);
                 }
-             
+
                 /**
              * Add a relationship count / exists condition to the query with where clauses.
              *
@@ -17781,7 +17781,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->whereDoesntHave($relation, $callback);
                 }
-             
+
                 /**
              * Add a relationship count / exists condition to the query with where clauses and an "or".
              *
@@ -17795,7 +17795,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->orWhereDoesntHave($relation, $callback);
                 }
-             
+
                 /**
              * Add a polymorphic relationship count / exists condition to the query.
              *
@@ -17813,7 +17813,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->hasMorph($relation, $types, $operator, $count, $boolean, $callback);
                 }
-             
+
                 /**
              * Add a polymorphic relationship count / exists condition to the query with an "or".
              *
@@ -17829,7 +17829,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->orHasMorph($relation, $types, $operator, $count);
                 }
-             
+
                 /**
              * Add a polymorphic relationship count / exists condition to the query.
              *
@@ -17845,7 +17845,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->doesntHaveMorph($relation, $types, $boolean, $callback);
                 }
-             
+
                 /**
              * Add a polymorphic relationship count / exists condition to the query with an "or".
              *
@@ -17859,7 +17859,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->orDoesntHaveMorph($relation, $types);
                 }
-             
+
                 /**
              * Add a polymorphic relationship count / exists condition to the query with where clauses.
              *
@@ -17876,7 +17876,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->whereHasMorph($relation, $types, $callback, $operator, $count);
                 }
-             
+
                 /**
              * Add a polymorphic relationship count / exists condition to the query with where clauses and an "or".
              *
@@ -17893,7 +17893,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->orWhereHasMorph($relation, $types, $callback, $operator, $count);
                 }
-             
+
                 /**
              * Add a polymorphic relationship count / exists condition to the query with where clauses.
              *
@@ -17908,7 +17908,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->whereDoesntHaveMorph($relation, $types, $callback);
                 }
-             
+
                 /**
              * Add a polymorphic relationship count / exists condition to the query with where clauses and an "or".
              *
@@ -17923,7 +17923,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->orWhereDoesntHaveMorph($relation, $types, $callback);
                 }
-             
+
                 /**
              * Add a basic where clause to a relationship query.
              *
@@ -17939,7 +17939,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->whereRelation($relation, $column, $operator, $value);
                 }
-             
+
                 /**
              * Add an "or where" clause to a relationship query.
              *
@@ -17955,7 +17955,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->orWhereRelation($relation, $column, $operator, $value);
                 }
-             
+
                 /**
              * Add a polymorphic relationship condition to the query with a where clause.
              *
@@ -17972,7 +17972,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->whereMorphRelation($relation, $types, $column, $operator, $value);
                 }
-             
+
                 /**
              * Add a polymorphic relationship condition to the query with an "or where" clause.
              *
@@ -17989,7 +17989,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->orWhereMorphRelation($relation, $types, $column, $operator, $value);
                 }
-             
+
                 /**
              * Add a morph-to relationship condition to the query.
              *
@@ -18003,7 +18003,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->whereMorphedTo($relation, $model, $boolean);
                 }
-             
+
                 /**
              * Add a morph-to relationship condition to the query with an "or where" clause.
              *
@@ -18017,7 +18017,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->orWhereMorphedTo($relation, $model);
                 }
-             
+
                 /**
              * Add a "belongs to" relationship where clause to the query.
              *
@@ -18033,7 +18033,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->whereBelongsTo($related, $relationshipName, $boolean);
                 }
-             
+
                 /**
              * Add an "BelongsTo" relationship with an "or where" clause to the query.
              *
@@ -18048,7 +18048,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->orWhereBelongsTo($related, $relationshipName);
                 }
-             
+
                 /**
              * Add subselect queries to include an aggregate value for a relationship.
              *
@@ -18063,7 +18063,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->withAggregate($relations, $column, $function);
                 }
-             
+
                 /**
              * Add subselect queries to count the relations.
              *
@@ -18076,7 +18076,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->withCount($relations);
                 }
-             
+
                 /**
              * Add subselect queries to include the max of the relation's column.
              *
@@ -18090,7 +18090,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->withMax($relation, $column);
                 }
-             
+
                 /**
              * Add subselect queries to include the min of the relation's column.
              *
@@ -18104,7 +18104,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->withMin($relation, $column);
                 }
-             
+
                 /**
              * Add subselect queries to include the sum of the relation's column.
              *
@@ -18118,7 +18118,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->withSum($relation, $column);
                 }
-             
+
                 /**
              * Add subselect queries to include the average of the relation's column.
              *
@@ -18132,7 +18132,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->withAvg($relation, $column);
                 }
-             
+
                 /**
              * Add subselect queries to include the existence of related models.
              *
@@ -18145,7 +18145,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->withExists($relation);
                 }
-             
+
                 /**
              * Merge the where constraints from another query to the current query.
              *
@@ -18158,7 +18158,7 @@ namespace  {
                     /** @var \Illuminate\Database\Eloquent\Builder $instance */
                     return $instance->mergeConstraintsFrom($from);
                 }
-             
+
                 /**
              * Set the columns to be selected.
              *
@@ -18171,7 +18171,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->select($columns);
                 }
-             
+
                 /**
              * Add a subselect expression to the query.
              *
@@ -18186,7 +18186,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->selectSub($query, $as);
                 }
-             
+
                 /**
              * Add a new "raw" select expression to the query.
              *
@@ -18200,7 +18200,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->selectRaw($expression, $bindings);
                 }
-             
+
                 /**
              * Makes "from" fetch from a subquery.
              *
@@ -18215,7 +18215,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->fromSub($query, $as);
                 }
-             
+
                 /**
              * Add a raw from clause to the query.
              *
@@ -18229,7 +18229,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->fromRaw($expression, $bindings);
                 }
-             
+
                 /**
              * Add a new select column to the query.
              *
@@ -18242,7 +18242,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->addSelect($column);
                 }
-             
+
                 /**
              * Force the query to only return distinct results.
              *
@@ -18254,7 +18254,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->distinct();
                 }
-             
+
                 /**
              * Set the table which the query is targeting.
              *
@@ -18268,7 +18268,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->from($table, $as);
                 }
-             
+
                 /**
              * Add a join clause to the query.
              *
@@ -18286,7 +18286,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->join($table, $first, $operator, $second, $type, $where);
                 }
-             
+
                 /**
              * Add a "join where" clause to the query.
              *
@@ -18303,7 +18303,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->joinWhere($table, $first, $operator, $second, $type);
                 }
-             
+
                 /**
              * Add a subquery join clause to the query.
              *
@@ -18323,7 +18323,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->joinSub($query, $as, $first, $operator, $second, $type, $where);
                 }
-             
+
                 /**
              * Add a left join to the query.
              *
@@ -18339,7 +18339,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->leftJoin($table, $first, $operator, $second);
                 }
-             
+
                 /**
              * Add a "join where" clause to the query.
              *
@@ -18355,7 +18355,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->leftJoinWhere($table, $first, $operator, $second);
                 }
-             
+
                 /**
              * Add a subquery left join to the query.
              *
@@ -18372,7 +18372,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->leftJoinSub($query, $as, $first, $operator, $second);
                 }
-             
+
                 /**
              * Add a right join to the query.
              *
@@ -18388,7 +18388,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->rightJoin($table, $first, $operator, $second);
                 }
-             
+
                 /**
              * Add a "right join where" clause to the query.
              *
@@ -18404,7 +18404,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->rightJoinWhere($table, $first, $operator, $second);
                 }
-             
+
                 /**
              * Add a subquery right join to the query.
              *
@@ -18421,7 +18421,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->rightJoinSub($query, $as, $first, $operator, $second);
                 }
-             
+
                 /**
              * Add a "cross join" clause to the query.
              *
@@ -18437,7 +18437,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->crossJoin($table, $first, $operator, $second);
                 }
-             
+
                 /**
              * Add a subquery cross join to the query.
              *
@@ -18451,7 +18451,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->crossJoinSub($query, $as);
                 }
-             
+
                 /**
              * Merge an array of where clauses and bindings.
              *
@@ -18465,7 +18465,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     $instance->mergeWheres($wheres, $bindings);
                 }
-             
+
                 /**
              * Prepare the value and operator for a where clause.
              *
@@ -18481,7 +18481,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->prepareValueAndOperator($value, $operator, $useDefault);
                 }
-             
+
                 /**
              * Add a "where" clause comparing two columns to the query.
              *
@@ -18497,7 +18497,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereColumn($first, $operator, $second, $boolean);
                 }
-             
+
                 /**
              * Add an "or where" clause comparing two columns to the query.
              *
@@ -18512,7 +18512,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereColumn($first, $operator, $second);
                 }
-             
+
                 /**
              * Add a raw where clause to the query.
              *
@@ -18527,7 +18527,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereRaw($sql, $bindings, $boolean);
                 }
-             
+
                 /**
              * Add a raw or where clause to the query.
              *
@@ -18541,7 +18541,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereRaw($sql, $bindings);
                 }
-             
+
                 /**
              * Add a "where in" clause to the query.
              *
@@ -18557,7 +18557,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereIn($column, $values, $boolean, $not);
                 }
-             
+
                 /**
              * Add an "or where in" clause to the query.
              *
@@ -18571,7 +18571,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereIn($column, $values);
                 }
-             
+
                 /**
              * Add a "where not in" clause to the query.
              *
@@ -18586,7 +18586,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereNotIn($column, $values, $boolean);
                 }
-             
+
                 /**
              * Add an "or where not in" clause to the query.
              *
@@ -18600,7 +18600,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereNotIn($column, $values);
                 }
-             
+
                 /**
              * Add a "where in raw" clause for integer values to the query.
              *
@@ -18616,7 +18616,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereIntegerInRaw($column, $values, $boolean, $not);
                 }
-             
+
                 /**
              * Add an "or where in raw" clause for integer values to the query.
              *
@@ -18630,7 +18630,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereIntegerInRaw($column, $values);
                 }
-             
+
                 /**
              * Add a "where not in raw" clause for integer values to the query.
              *
@@ -18645,7 +18645,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereIntegerNotInRaw($column, $values, $boolean);
                 }
-             
+
                 /**
              * Add an "or where not in raw" clause for integer values to the query.
              *
@@ -18659,7 +18659,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereIntegerNotInRaw($column, $values);
                 }
-             
+
                 /**
              * Add a "where null" clause to the query.
              *
@@ -18674,7 +18674,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereNull($columns, $boolean, $not);
                 }
-             
+
                 /**
              * Add an "or where null" clause to the query.
              *
@@ -18687,7 +18687,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereNull($column);
                 }
-             
+
                 /**
              * Add a "where not null" clause to the query.
              *
@@ -18701,7 +18701,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereNotNull($columns, $boolean);
                 }
-             
+
                 /**
              * Add a where between statement to the query.
              *
@@ -18717,7 +18717,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereBetween($column, $values, $boolean, $not);
                 }
-             
+
                 /**
              * Add a where between statement using columns to the query.
              *
@@ -18733,7 +18733,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereBetweenColumns($column, $values, $boolean, $not);
                 }
-             
+
                 /**
              * Add an or where between statement to the query.
              *
@@ -18747,7 +18747,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereBetween($column, $values);
                 }
-             
+
                 /**
              * Add an or where between statement using columns to the query.
              *
@@ -18761,7 +18761,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereBetweenColumns($column, $values);
                 }
-             
+
                 /**
              * Add a where not between statement to the query.
              *
@@ -18776,7 +18776,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereNotBetween($column, $values, $boolean);
                 }
-             
+
                 /**
              * Add a where not between statement using columns to the query.
              *
@@ -18791,7 +18791,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereNotBetweenColumns($column, $values, $boolean);
                 }
-             
+
                 /**
              * Add an or where not between statement to the query.
              *
@@ -18805,7 +18805,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereNotBetween($column, $values);
                 }
-             
+
                 /**
              * Add an or where not between statement using columns to the query.
              *
@@ -18819,7 +18819,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereNotBetweenColumns($column, $values);
                 }
-             
+
                 /**
              * Add an "or where not null" clause to the query.
              *
@@ -18832,7 +18832,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereNotNull($column);
                 }
-             
+
                 /**
              * Add a "where date" statement to the query.
              *
@@ -18848,7 +18848,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereDate($column, $operator, $value, $boolean);
                 }
-             
+
                 /**
              * Add an "or where date" statement to the query.
              *
@@ -18863,7 +18863,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereDate($column, $operator, $value);
                 }
-             
+
                 /**
              * Add a "where time" statement to the query.
              *
@@ -18879,7 +18879,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereTime($column, $operator, $value, $boolean);
                 }
-             
+
                 /**
              * Add an "or where time" statement to the query.
              *
@@ -18894,7 +18894,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereTime($column, $operator, $value);
                 }
-             
+
                 /**
              * Add a "where day" statement to the query.
              *
@@ -18910,7 +18910,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereDay($column, $operator, $value, $boolean);
                 }
-             
+
                 /**
              * Add an "or where day" statement to the query.
              *
@@ -18925,7 +18925,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereDay($column, $operator, $value);
                 }
-             
+
                 /**
              * Add a "where month" statement to the query.
              *
@@ -18941,7 +18941,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereMonth($column, $operator, $value, $boolean);
                 }
-             
+
                 /**
              * Add an "or where month" statement to the query.
              *
@@ -18956,7 +18956,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereMonth($column, $operator, $value);
                 }
-             
+
                 /**
              * Add a "where year" statement to the query.
              *
@@ -18972,7 +18972,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereYear($column, $operator, $value, $boolean);
                 }
-             
+
                 /**
              * Add an "or where year" statement to the query.
              *
@@ -18987,7 +18987,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereYear($column, $operator, $value);
                 }
-             
+
                 /**
              * Add a nested where statement to the query.
              *
@@ -19001,7 +19001,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereNested($callback, $boolean);
                 }
-             
+
                 /**
              * Create a new query instance for nested where condition.
              *
@@ -19013,7 +19013,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->forNestedWhere();
                 }
-             
+
                 /**
              * Add another query builder as a nested where to the query builder.
              *
@@ -19027,7 +19027,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->addNestedWhereQuery($query, $boolean);
                 }
-             
+
                 /**
              * Add an exists clause to the query.
              *
@@ -19042,7 +19042,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereExists($callback, $boolean, $not);
                 }
-             
+
                 /**
              * Add an or exists clause to the query.
              *
@@ -19056,7 +19056,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereExists($callback, $not);
                 }
-             
+
                 /**
              * Add a where not exists clause to the query.
              *
@@ -19070,7 +19070,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereNotExists($callback, $boolean);
                 }
-             
+
                 /**
              * Add a where not exists clause to the query.
              *
@@ -19083,7 +19083,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereNotExists($callback);
                 }
-             
+
                 /**
              * Add an exists clause to the query.
              *
@@ -19098,7 +19098,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->addWhereExistsQuery($query, $boolean, $not);
                 }
-             
+
                 /**
              * Adds a where condition using row values.
              *
@@ -19115,7 +19115,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereRowValues($columns, $operator, $values, $boolean);
                 }
-             
+
                 /**
              * Adds an or where condition using row values.
              *
@@ -19130,7 +19130,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereRowValues($columns, $operator, $values);
                 }
-             
+
                 /**
              * Add a "where JSON contains" clause to the query.
              *
@@ -19146,7 +19146,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereJsonContains($column, $value, $boolean, $not);
                 }
-             
+
                 /**
              * Add an "or where JSON contains" clause to the query.
              *
@@ -19160,7 +19160,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereJsonContains($column, $value);
                 }
-             
+
                 /**
              * Add a "where JSON not contains" clause to the query.
              *
@@ -19175,7 +19175,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereJsonDoesntContain($column, $value, $boolean);
                 }
-             
+
                 /**
              * Add an "or where JSON not contains" clause to the query.
              *
@@ -19189,7 +19189,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereJsonDoesntContain($column, $value);
                 }
-             
+
                 /**
              * Add a "where JSON length" clause to the query.
              *
@@ -19205,7 +19205,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereJsonLength($column, $operator, $value, $boolean);
                 }
-             
+
                 /**
              * Add an "or where JSON length" clause to the query.
              *
@@ -19220,7 +19220,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereJsonLength($column, $operator, $value);
                 }
-             
+
                 /**
              * Handles dynamic "where" clauses to the query.
              *
@@ -19234,7 +19234,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->dynamicWhere($method, $parameters);
                 }
-             
+
                 /**
              * Add a "where fulltext" clause to the query.
              *
@@ -19249,7 +19249,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->whereFullText($columns, $value, $options, $boolean);
                 }
-             
+
                 /**
              * Add a "or where fulltext" clause to the query.
              *
@@ -19263,7 +19263,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orWhereFullText($columns, $value, $options);
                 }
-             
+
                 /**
              * Add a "group by" clause to the query.
              *
@@ -19276,7 +19276,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->groupBy(...$groups);
                 }
-             
+
                 /**
              * Add a raw groupBy clause to the query.
              *
@@ -19290,7 +19290,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->groupByRaw($sql, $bindings);
                 }
-             
+
                 /**
              * Add a "having" clause to the query.
              *
@@ -19306,7 +19306,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->having($column, $operator, $value, $boolean);
                 }
-             
+
                 /**
              * Add an "or having" clause to the query.
              *
@@ -19321,7 +19321,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orHaving($column, $operator, $value);
                 }
-             
+
                 /**
              * Add a nested having statement to the query.
              *
@@ -19335,7 +19335,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->havingNested($callback, $boolean);
                 }
-             
+
                 /**
              * Add another query builder as a nested having to the query builder.
              *
@@ -19349,7 +19349,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->addNestedHavingQuery($query, $boolean);
                 }
-             
+
                 /**
              * Add a "having null" clause to the query.
              *
@@ -19364,7 +19364,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->havingNull($columns, $boolean, $not);
                 }
-             
+
                 /**
              * Add an "or having null" clause to the query.
              *
@@ -19377,7 +19377,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orHavingNull($column);
                 }
-             
+
                 /**
              * Add a "having not null" clause to the query.
              *
@@ -19391,7 +19391,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->havingNotNull($columns, $boolean);
                 }
-             
+
                 /**
              * Add an "or having not null" clause to the query.
              *
@@ -19404,7 +19404,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orHavingNotNull($column);
                 }
-             
+
                 /**
              * Add a "having between " clause to the query.
              *
@@ -19420,7 +19420,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->havingBetween($column, $values, $boolean, $not);
                 }
-             
+
                 /**
              * Add a raw having clause to the query.
              *
@@ -19435,7 +19435,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->havingRaw($sql, $bindings, $boolean);
                 }
-             
+
                 /**
              * Add a raw or having clause to the query.
              *
@@ -19449,7 +19449,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orHavingRaw($sql, $bindings);
                 }
-             
+
                 /**
              * Add an "order by" clause to the query.
              *
@@ -19464,7 +19464,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orderBy($column, $direction);
                 }
-             
+
                 /**
              * Add a descending "order by" clause to the query.
              *
@@ -19477,7 +19477,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orderByDesc($column);
                 }
-             
+
                 /**
              * Put the query's results in random order.
              *
@@ -19490,7 +19490,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->inRandomOrder($seed);
                 }
-             
+
                 /**
              * Add a raw "order by" clause to the query.
              *
@@ -19504,7 +19504,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->orderByRaw($sql, $bindings);
                 }
-             
+
                 /**
              * Alias to set the "offset" value of the query.
              *
@@ -19517,7 +19517,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->skip($value);
                 }
-             
+
                 /**
              * Set the "offset" value of the query.
              *
@@ -19530,7 +19530,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->offset($value);
                 }
-             
+
                 /**
              * Alias to set the "limit" value of the query.
              *
@@ -19543,7 +19543,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->take($value);
                 }
-             
+
                 /**
              * Set the "limit" value of the query.
              *
@@ -19556,7 +19556,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->limit($value);
                 }
-             
+
                 /**
              * Set the limit and offset for a given page.
              *
@@ -19570,7 +19570,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->forPage($page, $perPage);
                 }
-             
+
                 /**
              * Constrain the query to the previous "page" of results before a given ID.
              *
@@ -19585,7 +19585,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->forPageBeforeId($perPage, $lastId, $column);
                 }
-             
+
                 /**
              * Constrain the query to the next "page" of results after a given ID.
              *
@@ -19600,7 +19600,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->forPageAfterId($perPage, $lastId, $column);
                 }
-             
+
                 /**
              * Remove all existing orders and optionally add a new order.
              *
@@ -19614,7 +19614,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->reorder($column, $direction);
                 }
-             
+
                 /**
              * Add a union statement to the query.
              *
@@ -19628,7 +19628,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->union($query, $all);
                 }
-             
+
                 /**
              * Add a union all statement to the query.
              *
@@ -19641,7 +19641,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->unionAll($query);
                 }
-             
+
                 /**
              * Lock the selected rows in the table.
              *
@@ -19654,7 +19654,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->lock($value);
                 }
-             
+
                 /**
              * Lock the selected rows in the table for updating.
              *
@@ -19666,7 +19666,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->lockForUpdate();
                 }
-             
+
                 /**
              * Share lock the selected rows in the table.
              *
@@ -19678,7 +19678,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->sharedLock();
                 }
-             
+
                 /**
              * Register a closure to be invoked before the query is executed.
              *
@@ -19691,7 +19691,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->beforeQuery($callback);
                 }
-             
+
                 /**
              * Invoke the "before query" modification callbacks.
              *
@@ -19703,7 +19703,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     $instance->applyBeforeQueryCallbacks();
                 }
-             
+
                 /**
              * Get the SQL representation of the query.
              *
@@ -19715,7 +19715,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->toSql();
                 }
-             
+
                 /**
              * Get the count of the total records for the paginator.
              *
@@ -19728,7 +19728,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->getCountForPagination($columns);
                 }
-             
+
                 /**
              * Concatenate values of a given column as a string.
              *
@@ -19742,7 +19742,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->implode($column, $glue);
                 }
-             
+
                 /**
              * Determine if any rows exist for the current query.
              *
@@ -19754,7 +19754,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->exists();
                 }
-             
+
                 /**
              * Determine if no rows exist for the current query.
              *
@@ -19766,7 +19766,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->doesntExist();
                 }
-             
+
                 /**
              * Execute the given callback if no rows exist for the current query.
              *
@@ -19779,7 +19779,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->existsOr($callback);
                 }
-             
+
                 /**
              * Execute the given callback if rows exist for the current query.
              *
@@ -19792,7 +19792,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->doesntExistOr($callback);
                 }
-             
+
                 /**
              * Retrieve the "count" result of the query.
              *
@@ -19805,7 +19805,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->count($columns);
                 }
-             
+
                 /**
              * Retrieve the minimum value of a given column.
              *
@@ -19818,7 +19818,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->min($column);
                 }
-             
+
                 /**
              * Retrieve the maximum value of a given column.
              *
@@ -19831,7 +19831,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->max($column);
                 }
-             
+
                 /**
              * Retrieve the sum of the values of a given column.
              *
@@ -19844,7 +19844,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->sum($column);
                 }
-             
+
                 /**
              * Retrieve the average of the values of a given column.
              *
@@ -19857,7 +19857,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->avg($column);
                 }
-             
+
                 /**
              * Alias for the "avg" method.
              *
@@ -19870,7 +19870,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->average($column);
                 }
-             
+
                 /**
              * Execute an aggregate function on the database.
              *
@@ -19884,7 +19884,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->aggregate($function, $columns);
                 }
-             
+
                 /**
              * Execute a numeric aggregate function on the database.
              *
@@ -19898,7 +19898,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->numericAggregate($function, $columns);
                 }
-             
+
                 /**
              * Insert new records into the database.
              *
@@ -19911,7 +19911,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->insert($values);
                 }
-             
+
                 /**
              * Insert new records into the database while ignoring errors.
              *
@@ -19924,7 +19924,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->insertOrIgnore($values);
                 }
-             
+
                 /**
              * Insert a new record and get the value of the primary key.
              *
@@ -19938,7 +19938,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->insertGetId($values, $sequence);
                 }
-             
+
                 /**
              * Insert new records into the table using a subquery.
              *
@@ -19952,7 +19952,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->insertUsing($columns, $query);
                 }
-             
+
                 /**
              * Update records in a PostgreSQL database using the update from syntax.
              *
@@ -19965,7 +19965,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->updateFrom($values);
                 }
-             
+
                 /**
              * Insert or update a record matching the attributes, and fill it with values.
              *
@@ -19979,7 +19979,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->updateOrInsert($attributes, $values);
                 }
-             
+
                 /**
              * Run a truncate statement on the table.
              *
@@ -19991,7 +19991,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     $instance->truncate();
                 }
-             
+
                 /**
              * Create a raw database expression.
              *
@@ -20004,7 +20004,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->raw($value);
                 }
-             
+
                 /**
              * Get the current query value bindings in a flattened array.
              *
@@ -20016,7 +20016,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->getBindings();
                 }
-             
+
                 /**
              * Get the raw array of bindings.
              *
@@ -20028,7 +20028,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->getRawBindings();
                 }
-             
+
                 /**
              * Set the bindings on the query builder.
              *
@@ -20043,7 +20043,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->setBindings($bindings, $type);
                 }
-             
+
                 /**
              * Add a binding to the query.
              *
@@ -20058,7 +20058,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->addBinding($value, $type);
                 }
-             
+
                 /**
              * Cast the given binding value.
              *
@@ -20071,7 +20071,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->castBinding($value);
                 }
-             
+
                 /**
              * Merge an array of bindings into our bindings.
              *
@@ -20084,7 +20084,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->mergeBindings($query);
                 }
-             
+
                 /**
              * Remove all of the expressions from a list of bindings.
              *
@@ -20097,7 +20097,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->cleanBindings($bindings);
                 }
-             
+
                 /**
              * Get the database query processor instance.
              *
@@ -20109,7 +20109,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->getProcessor();
                 }
-             
+
                 /**
              * Get the query grammar instance.
              *
@@ -20121,7 +20121,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->getGrammar();
                 }
-             
+
                 /**
              * Use the "write" PDO connection when executing the query.
              *
@@ -20133,7 +20133,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->useWritePdo();
                 }
-             
+
                 /**
              * Clone the query without the given properties.
              *
@@ -20146,7 +20146,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->cloneWithout($properties);
                 }
-             
+
                 /**
              * Clone the query without the given bindings.
              *
@@ -20159,7 +20159,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->cloneWithoutBindings($except);
                 }
-             
+
                 /**
              * Dump the current SQL and bindings.
              *
@@ -20171,7 +20171,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->dump();
                 }
-             
+
                 /**
              * Die and dump the current SQL and bindings.
              *
@@ -20183,7 +20183,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->dd();
                 }
-             
+
                 /**
              * Explains the query.
              *
@@ -20195,7 +20195,7 @@ namespace  {
                     /** @var \Illuminate\Database\Query\Builder $instance */
                     return $instance->explain();
                 }
-             
+
                 /**
              * Register a custom macro.
              *
@@ -20208,7 +20208,7 @@ namespace  {
                 {
                     \Illuminate\Database\Query\Builder::macro($name, $macro);
                 }
-             
+
                 /**
              * Mix another object into the class.
              *
@@ -20222,7 +20222,7 @@ namespace  {
                 {
                     \Illuminate\Database\Query\Builder::mixin($mixin, $replace);
                 }
-             
+
                 /**
              * Flush the existing macros.
              *
@@ -20233,7 +20233,7 @@ namespace  {
                 {
                     \Illuminate\Database\Query\Builder::flushMacros();
                 }
-             
+
                 /**
              * Dynamically handle calls to the class.
              *
@@ -20324,12 +20324,11 @@ namespace  {
             class Flare extends \Spatie\LaravelIgnition\Facades\Flare
             {
             }
-     
+
 }
 
-
 namespace {
-    
+
 
 use Illuminate\Contracts\Support\DeferringDisplayableValue;
 use Illuminate\Contracts\Support\Htmlable;
@@ -20598,7 +20597,7 @@ if (! function_exists('str')) {
     function str($string = null)
     {
         if (func_num_args() === 0) {
-            return new class {
+            return new class () {
                 public function __call($method, $parameters)
                 {
                     return Str::$method(...$parameters);
@@ -20748,7 +20747,7 @@ if (! function_exists('with')) {
         return is_null($callback) ? $value : $callback($value);
     }
 }
- 
+
 }
 
 namespace Illuminate\Support {

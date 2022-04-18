@@ -13,9 +13,8 @@ Esse aplicativo é um dos microserviços da DigitalMaps, sua responsabilidade é
 
 # Pré-requisitos
 
-- MacOS, Linux ou Windows (via [WSL2](https://docs.microsoft.com/en-us/windows/wsl/about)
-- Git
-
+- MacOS, Linux ou Windows (via [WSL2](https://docs.microsoft.com/en-us/windows/wsl/about))
+- [Git](https://git-scm.com/about)
 
 # Instalação
 
@@ -40,6 +39,8 @@ Para iniciar todos os containers Docker definidos, você deve executar o comando
 ```shell
 ./vendor/bin/sail up
 ```
+
+![DigitalMaps](./repo/docker.png)
 
 Uma vez iniciados os containers da aplicação, você pode acessar o projeto em seu navegador web em: ``http://localhost``
 
@@ -81,6 +82,20 @@ sail test
 ````
 
 ![Digital Maps Test](./repo/tests.png "Digital Maps Test")
+
+### PHP-CS-Fixer
+
+O [PHP-CS-Fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) é um fixador de padrões de codificação PHP, ele corrige todo o estilo do seu código, quebras, espaços, estilo de declarações, dentre outros.
+
+A configuração do estilo do código seguido é [PSR-12](https://www.php-fig.org/psr/psr-12/), detalhes e configurações do estilo do código pode ser obtido através do arquivo ``.php-cs-fixer.php`` na raiz desse projeto.
+
+Para verificar se estilo do código está seguindo os padrões de desenvolvimento definido execute o comando abaixo:
+
+````shell
+sail composer check-style
+````
+
+![Check Style](./repo/check-style.png)
 
 ### PHPStan
 
