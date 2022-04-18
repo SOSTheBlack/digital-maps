@@ -1,22 +1,53 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://www.cabecadelab.com.br/tmp/logoluizalabs.png" width="400"></a></p>
 
 # Sumário
-- Introdução
-- Instalação
-- Qualidade
+- [Introdução](#Introdução)
+- [Arquitetura](#Arquitetura)
+- [Instalação](#Instalação)
+- [Qualidade do Código](#Qualidade do Código)
+- [Documentação](#Documentação)
 
 # Introdução
 
 A DigitalMaps é uma empresa especializada na produção de receptores GPS.
 
-Esse aplicativo é um dos microserviços da DigitalMaps, sua responsabilidade é armazenar pontos de referência segundo sua latitude longitude e horário de funcionamento, além é claro, disponibilizar os pontos de referência(previamente cadastrados) próximos ao usuário ativo.
+Esse aplicativo é um dos microserviços da DigitalMaps, sua responsabilidades são: 
+- **Armazenar** pontos de referência segundo sua **latitude**, **longitude** e **horário** de funcionamento.
+- **Disponibilizar** os **pontos de referência**(previamente cadastrados) em funcionamento próximos ao usuário.
 
-# Pré-requisitos
+# Arquitetura
+
+O microserviço foi desenvolvido na linguagem de programação PHP com framework Laravel 9.x.
+Para armazenamento dos dados está sendo utilizado MySql com Eloquent(Laravel) implementado Repository Partner.
+
+Hoje o microseviço funciona sobre três pilares, usuário, pontos de interesse e proximidades que reúne o local do usuário e interesse ao seu redor.
+
+### Helpers
+
+Por ser um projeto pequeno não houve a necessidade da criação de um ``helper.php`` file. Porém criei a _trait_ `\App\Helpers\AuthUser` utilizado apenas no _observer_ `\App\Observers\PointInterestObserver`
+
+### Observers
+
+Os _observers_ são utilizados para ouvirem eventos de um determinado modelo
+
+``\App\Observers\PointInterestObserver``: Responsável por definir o usuário logado como criador do ponto de interesse recém registrado.
+
+``\App\Observers\UserObserver``: Responsável por criptografar a senha do usuário recém-criado.
+
+### Repositório
+
+Repositório é um serviço que utilizo para armazenar lógica do meu modelo de dados. 
+
+Para cada modelo eu tenho um Serviço de repositório que ficam armazenados na pasta ``app/Repositorios``.
+
+Todos os repositórios são carregados automaticamente através do provider `\App\Providers\RepositoryServiceProvider` possibilitando a _dependency injection_.
+
+# Instalação
+
+### Pré-requisitos
 
 - MacOS, Linux ou Windows (via [WSL2](https://docs.microsoft.com/en-us/windows/wsl/about))
 - [Git](https://git-scm.com/about)
-
-# Instalação
 
 ### Baixando microserviço
 
@@ -123,12 +154,10 @@ sail composer phpinsights
 
 ![PHPInsights](./repo/phpinsights.png)
 
-## Documentação
+# Documentação
 
 A documentação do aplicativo pode ser importado para o seu Postman através do botão abaixo:
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/180952-861dd8da-216c-43b6-980c-a8d5953605e3?action=collection%2Ffork&collection-url=entityId%3D180952-861dd8da-216c-43b6-980c-a8d5953605e3%26entityType%3Dcollection%26workspaceId%3D9ff1b393-f814-4463-bcc3-414ac91c28ab#?env%5Bdigital-mpas%5D=W3sia2V5IjoiYmFzZV91cmwiLCJ2YWx1ZSI6Imh0dHA6Ly9kaWdpdGFsLW1hcHMudGVzdC9hcGkiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoiZGVmYXVsdCJ9LHsia2V5IjoiYWNjZXNzX3Rva2VuIiwidmFsdWUiOiJjYzc4MWQzYmJhNThlZWU1OGJiNWQ5MzUyMDRkNjEyYTRlNTMxNjcyZTA5MjcyNmQwZTE1NWIxZTI1OTc3MjM2IiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6ImRlZmF1bHQifV0=)
 
 ![Documentação](./repo/postman.png "Documentação")
-
-## Configuração
