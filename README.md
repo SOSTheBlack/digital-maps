@@ -82,7 +82,19 @@ sail test
 
 ![Digital Maps Test](./repo/tests.png "Digital Maps Test")
 
-### sail composer phpstan
+### PHPStan
+
+O [PHPStan](https://github.com/phpstan/phpstan) se concentra em encontrar erros em seu código sem realmente executá-lo. Ele captura classes inteiras de bugs antes mesmo de você escrever testes para o código. Ele aproxima o PHP das linguagens compiladas no sentido de que a correção de cada linha do código pode ser verificada antes de você executar a linha atual.
+
+Resumidamente ele é um analisador estático que varre o código da sua aplicação procurando por erros e incongruências sem que haja a necessidade de executá-lo, a análise é toda estática. É uma ferramenta essencial para te apontar bugs ou erros que certamente aparecerão em algum momento do uso da aplicação.
+
+O PHPStan está analisando o código no nível mais estrito(**9**) possível. Para executar esse analisador de código, basta executar o comando abaixo:
+
+````shell
+sail composer phpstan
+````
+
+![LaravelStan](./repo/phpstan.png "PHP Stan")
 
 ### sail composer phpinsights
 
