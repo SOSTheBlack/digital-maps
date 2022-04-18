@@ -26,7 +26,7 @@ class StorageUserRequest extends FormRequest
         return [
             'name' => ['required', 'string'],
             'email' => ['required', 'email', 'unique:users', 'min:3', 'max:255'],
-            'password' => ['required', 'min:3', 'max:255']
+            'password' => ['required', 'min:3', 'max:255'],
         ];
     }
 }

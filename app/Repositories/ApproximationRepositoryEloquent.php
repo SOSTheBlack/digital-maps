@@ -19,7 +19,7 @@ final class ApproximationRepositoryEloquent extends BaseRepository implements Ap
      *
      * @return string
      */
-    public function model()
+    public function model(): string
     {
         return Approximation::class;
     }
@@ -27,9 +27,11 @@ final class ApproximationRepositoryEloquent extends BaseRepository implements Ap
     /**
      * Boot up the repository, pushing criteria
      *
+     * @return void
+     *
      * @throws RepositoryException
      */
-    public function boot()
+    public function boot(): void
     {
         $this->pushCriteria(app(RequestCriteria::class));
     }

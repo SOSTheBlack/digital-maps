@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Collection;
 interface ProximityContract
 {
     /**
+     * Search point interests by the proximity.
+     *
      * @param  Approximation  $approximation
      *
      * @return Collection

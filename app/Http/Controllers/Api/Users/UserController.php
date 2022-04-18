@@ -13,10 +13,14 @@ abstract class UserController extends ApiController
      */
     protected User $modelUser;
 
+    /**
+     * @var UserRepository
+     */
     protected UserRepository $userRepository;
 
     /**
      * @param  User  $user
+     * @param  UserRepository  $userRepository
      */
     public function __construct(User $user, UserRepository $userRepository)
     {
