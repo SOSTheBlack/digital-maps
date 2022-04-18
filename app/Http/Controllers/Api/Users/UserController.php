@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\Users;
 
 use App\Http\Controllers\Api\ApiController;
 use App\Models\User;
+use App\Repositories\Contracts\UserRepository;
 
 abstract class UserController extends ApiController
 {
@@ -13,10 +14,17 @@ abstract class UserController extends ApiController
     protected User $modelUser;
 
     /**
-     * @param  User  $user
+     * @var UserRepository
      */
-    public function __construct(User $user)
+    protected UserRepository $userRepository;
+
+    /**
+     * @param  User  $user
+     * @param  UserRepository  $userRepository
+     */
+    public function __construct(User $user, UserRepository $userRepository)
     {
         $this->modelUser = $user;
+        $this->userRepository = $userRepository;
     }
 }

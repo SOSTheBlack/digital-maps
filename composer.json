@@ -13,14 +13,18 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.14",
-        "laravel/tinker": "^2.7"
+        "laravel/tinker": "^2.7",
+        "prettus/l5-repository": "^2.8"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.12",
         "fakerphp/faker": "^1.9.1",
-        "laravel/sail": "^1.0.1",
+        "friendsofphp/php-cs-fixer": "^3.8",
+        "laravel/sail": "^1.13",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
+        "nunomaduro/larastan": "^2.0",
+        "nunomaduro/phpinsights": "^2.2",
         "phpunit/phpunit": "^9.5.10",
         "spatie/laravel-ignition": "^1.0"
     },
@@ -51,6 +55,18 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "fix-style": [
+            "vendor/bin/php-cs-fixer fix --config .php-cs-fixer.php"
+        ],
+        "check-style": [
+            "vendor/bin/php-cs-fixer fix --config .php-cs-fixer.php --diff --verbose --dry-run"
+        ],
+        "phpinsights": [
+            "php artisan insights"
+        ],
+        "phpstan": [
+            "./vendor/bin/phpstan analyse"
         ]
     },
     "extra": {
@@ -61,7 +77,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true

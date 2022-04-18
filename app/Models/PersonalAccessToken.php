@@ -2,6 +2,10 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 use Laravel\Sanctum\PersonalAccessToken as SanctumPersonalAccessToken;
 
 /**
@@ -13,25 +17,27 @@ use Laravel\Sanctum\PersonalAccessToken as SanctumPersonalAccessToken;
  * @property string $name
  * @property string $token
  * @property array|null $abilities
- * @property \Illuminate\Support\Carbon|null $last_used_at
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $tokenable
- * @method static \Illuminate\Database\Eloquent\Builder|PersonalAccessToken newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|PersonalAccessToken newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|PersonalAccessToken query()
- * @method static \Illuminate\Database\Eloquent\Builder|PersonalAccessToken whereAbilities($value)
- * @method static \Illuminate\Database\Eloquent\Builder|PersonalAccessToken whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|PersonalAccessToken whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|PersonalAccessToken whereLastUsedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|PersonalAccessToken whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|PersonalAccessToken whereToken($value)
- * @method static \Illuminate\Database\Eloquent\Builder|PersonalAccessToken whereTokenableId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|PersonalAccessToken whereTokenableType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|PersonalAccessToken whereUpdatedAt($value)
- * @mixin \Eloquent
+ * @property Carbon|null $last_used_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ *
+ * @property-read Model|Eloquent $tokenable
+ *
+ * @method static Builder|PersonalAccessToken newModelQuery()
+ * @method static Builder|PersonalAccessToken newQuery()
+ * @method static Builder|PersonalAccessToken query()
+ * @method static Builder|PersonalAccessToken whereAbilities($value)
+ * @method static Builder|PersonalAccessToken whereCreatedAt($value)
+ * @method static Builder|PersonalAccessToken whereId($value)
+ * @method static Builder|PersonalAccessToken whereLastUsedAt($value)
+ * @method static Builder|PersonalAccessToken whereName($value)
+ * @method static Builder|PersonalAccessToken whereToken($value)
+ * @method static Builder|PersonalAccessToken whereTokenableId($value)
+ * @method static Builder|PersonalAccessToken whereTokenableType($value)
+ * @method static Builder|PersonalAccessToken whereUpdatedAt($value)
+ *
+ * @mixin Eloquent
  */
 class PersonalAccessToken extends SanctumPersonalAccessToken
 {
-
 }

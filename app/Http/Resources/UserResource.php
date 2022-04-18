@@ -5,6 +5,7 @@ namespace App\Http\Resources;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Str;
 
 /**
  * @mixin User
@@ -28,9 +29,10 @@ class UserResource extends JsonResource
             'updated_at' => $this->updated_at,
         ]);
 
-        if ($this?->token) {
-            $fields->put('token', $this->token);
-            $fields->put('token_type', 'Bearer');
+        if (isset($this->token)) {
+            $fields
+                ->put('token', Str::after((string) $this->token, '|'))
+                ->put('token_type', 'Bearer');
         }
 
         return $fields->toArray();

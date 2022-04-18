@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Api\User;
+namespace App\Http\Requests\Api\PointInterests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StorageUserRequest extends FormRequest
+class ListRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class StorageUserRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true;
+        return ! auth()->guest();
     }
 
     /**
@@ -21,12 +21,10 @@ class StorageUserRequest extends FormRequest
      *
      * @return array
      */
-    public function rules(): array
+    public function rules()
     {
         return [
-            'name' => ['required', 'string'],
-            'email' => ['required', 'email', 'unique:users', 'min:3', 'max:255'],
-            'password' => ['required', 'min:3', 'max:255']
+
         ];
     }
 }

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\DatabaseNotification;
@@ -30,10 +31,14 @@ use Ramsey\Uuid\Uuid;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property Carbon|null $deleted_at
- * @property-read DatabaseNotificationCollection|DatabaseNotification[] $notifications
+ *
+ * @property-read DatabaseNotificationCollection|array<DatabaseNotification> $notifications
  * @property-read int|null $notifications_count
- * @property-read Collection|PersonalAccessToken[] $tokens
+ * @property-read Collection|array<PointInterest> $pointInterests
+ * @property-read int|null $point_interests_count
+ * @property-read Collection|array<PersonalAccessToken> $tokens
  * @property-read int|null $tokens_count
+ *
  * @method static UserFactory factory(...$parameters)
  * @method static Builder|User newModelQuery()
  * @method static Builder|User newQuery()
@@ -51,9 +56,10 @@ use Ramsey\Uuid\Uuid;
  * @method static Builder|User whereUuid($value)
  * @method static \Illuminate\Database\Query\Builder|User withTrashed()
  * @method static \Illuminate\Database\Query\Builder|User withoutTrashed()
+ *
  * @mixin Eloquent
  */
-class User extends Authenticatable
+final class User extends Authenticatable
 {
     use HasApiTokens;
     use HasFactory;
@@ -101,9 +107,32 @@ class User extends Authenticatable
         parent::boot();
 
         self::creating(function ($model) {
-            if (collect($model->getFillable())->filter(fn(string $columnName) => $columnName === BaseModel::KEY_UUID)?->isNotEmpty()) {
+            /** @var array $fillable */
+            $fillable = $model->getFillable();
+            $filterKeyColumn = collect($fillable)->filter(fn (string $columnName) => $columnName === BaseModel::KEY_UUID);
+
+            if ($filterKeyColumn->isNotEmpty()) {
                 $model->uuid = (string) Uuid::uuid4();
             }
         });
+    }
+
+    /**
+     * @return HasMany
+     */
+    public function pointInterests(): HasMany
+    {
+        return $this->hasMany(PointInterest::class);
+    }
+
+    /**
+     * @return Attribute
+     */
+    public function token(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => $value,
+            set: fn ($value) => $value
+        );
     }
 }
