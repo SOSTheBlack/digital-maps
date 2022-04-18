@@ -2,25 +2,28 @@
 
 namespace App\Models;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Ramsey\Uuid\Uuid;
 
 /**
  * App\Models\BaseModel
  *
- * @method static \Illuminate\Database\Eloquent\Builder|BaseModel newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|BaseModel newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|BaseModel query()
- * @mixin \Eloquent
+ * @method static Builder|BaseModel newModelQuery()
+ * @method static Builder|BaseModel newQuery()
+ * @method static Builder|BaseModel query()
+ *
+ * @mixin Eloquent
  */
-class BaseModel extends Model
+abstract class BaseModel extends Model
 {
     /**
      * Column name uuid.
      *
      * @const string
      */
-    public const KEY_UUID = "uuid";
+    public const KEY_UUID = 'uuid';
 
     /**
      * Bootstrap the model and its traits.
@@ -32,7 +35,11 @@ class BaseModel extends Model
         parent::boot();
 
         self::creating(function ($model) {
-            if (collect($model->getFillable())->filter(fn(string $columnName) => $columnName === self::KEY_UUID)?->isNotEmpty()) {
+            /** @var array $fillable */
+            $fillable = $model->getFillable();
+            $filterKeyColumn = collect($fillable)->filter(fn (string $columnName) => $columnName === self::KEY_UUID);
+
+            if ($filterKeyColumn->isNotEmpty()) {
                 $model->uuid = (string) Uuid::uuid4();
             }
         });

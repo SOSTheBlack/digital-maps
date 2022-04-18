@@ -9,6 +9,9 @@ use App\Models\User;
  */
 trait AuthTrait
 {
+    /**
+     * @var User|null
+     */
     protected ?User $authUser;
 
     public function __construct()

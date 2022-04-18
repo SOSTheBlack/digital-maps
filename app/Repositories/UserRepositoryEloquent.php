@@ -43,6 +43,9 @@ class UserRepositoryEloquent extends BaseRepository implements UserRepository
      */
     public function generateToken(User $user): string
     {
-        return $user->createToken('auth_token')->plainTextToken;
+        $accessToken = $user->createToken('auth_token')->plainTextToken;
+        $user->setAttribute('token', $accessToken);
+
+        return $accessToken;
     }
 }

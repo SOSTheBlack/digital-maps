@@ -5,7 +5,7 @@ namespace App\Observers;
 use App\Helpers\AuthTrait;
 use App\Models\PointInterest;
 
-class PointInterestObserver
+final class PointInterestObserver
 {
     use AuthTrait;
 
@@ -18,7 +18,7 @@ class PointInterestObserver
      */
     public function creating(PointInterest $pointInterest): void
     {
-        if (is_null($pointInterest->user_id)) {
+        if (empty($pointInterest->user_id) && isset($this->authUser?->id)) {
             $pointInterest->user_id = $this->authUser->id;
         }
     }

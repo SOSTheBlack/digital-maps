@@ -34,8 +34,8 @@ class StorageRequest extends FormRequest
             'name' => ['required', 'string', 'min:3', 'max:255'],
             'latitude' => ['required', 'numeric', 'gt:0'],
             'longitude' => ['required', 'numeric', 'gt:0'],
-            'opened' => ['nullable', 'date_format:H:i'],
-            'closed' => ['required_if:opened', 'nullable', 'date_format:H:i', 'after:opened'],
+            'opened' => ['required_with:closed', 'nullable', 'date_format:H:i'],
+            'closed' => ['required_with:opened', 'nullable', 'date_format:H:i'],
         ];
     }
 }
