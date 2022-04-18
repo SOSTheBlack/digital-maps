@@ -61,6 +61,19 @@ git clone https://github.com/SOSTheBlack/digital-maps
 cd digital-maps
 ```
 
+### Instalando dependências
+
+Este comando usa um pequeno container Docker contendo PHP e Composer para instalar as dependências do aplicativo:
+````shell
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v $(pwd):/var/www/html \
+    -w /var/www/html \
+    laravelsail/php81-composer:latest \
+    cp .env.example .env
+    composer install --ignore-platform-reqs
+````
+
 ### Iniciando microserviço
 
 No projeto é utilizado [Laravel Sail](https://laravel.com/docs/9.x/sail), uma interface de linha de comando leve para interagir com o ambiente de desenvolvimento [Docker](https://www.docker.com/why-docker/).
