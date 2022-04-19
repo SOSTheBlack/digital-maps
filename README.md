@@ -61,6 +61,11 @@ git clone https://github.com/SOSTheBlack/digital-maps
 cd digital-maps
 ```
 
+Faça uma cópia do arquivo .env.example e o nomei de .env com o comando abaixo:
+````shell
+cp .env.example .env
+````
+
 ### Instalando dependências
 
 Este comando usa um pequeno container Docker contendo PHP e Composer para instalar as dependências do aplicativo:
@@ -70,7 +75,6 @@ docker run --rm \
     -v $(pwd):/var/www/html \
     -w /var/www/html \
     laravelsail/php81-composer:latest \
-    cp .env.example .env
     composer install --ignore-platform-reqs
 ````
 
