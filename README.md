@@ -94,6 +94,19 @@ Para iniciar todos os containers Docker definidos, você deve executar o comando
 
 Uma vez iniciados os containers da aplicação, você pode acessar o projeto em seu navegador web em: ``http://localhost``
 
+### Interagindo com o banco de dados
+
+Para se conectar ao banco de dados MySQL a partir de sua máquina local, você pode usar um aplicativo gráfico de gerenciamento de banco de dados, como o TablePlus.
+
+Por padrão, o banco de dados MySQL está acessível na localhostporta 3306.
+
+````dotenv
+HOST=localhost
+USERNAME=root
+PASSWORD=password
+DATABASE=digital-maps
+````
+
 ### Configurando alias
 
 Por padrão, os comandos Sail são invocados usando o vendor/bin/sail.
