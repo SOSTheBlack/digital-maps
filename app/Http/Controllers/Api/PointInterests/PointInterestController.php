@@ -12,11 +12,13 @@ abstract class PointInterestController extends ApiController
      */
     protected PointInterestRepository $pointInterestRepository;
 
-    /**
-     * @param  PointInterestRepository  $pointInterestRepository
-     */
-    public function __construct(PointInterestRepository $pointInterestRepository)
+    public function __construct()
     {
-        $this->pointInterestRepository = $pointInterestRepository;
+        $this->initializePointInterest();
+    }
+
+    public function initializePointInterest()
+    {
+        $this->pointInterestRepository = app(PointInterestRepository::class);
     }
 }

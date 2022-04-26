@@ -24,10 +24,8 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property string|null $deleted_at
- *
- * @property-read User|null $owner
- *
- * @method static ApproximationFactory factory(...$parameters)
+ * @property-read \App\Models\User|null $owner
+ * @method static \Database\Factories\ApproximationFactory factory(...$parameters)
  * @method static Builder|Approximation newModelQuery()
  * @method static Builder|Approximation newQuery()
  * @method static Builder|Approximation query()
@@ -41,7 +39,6 @@ use Prettus\Repository\Traits\TransformableTrait;
  * @method static Builder|Approximation whereUpdatedAt($value)
  * @method static Builder|Approximation whereUserId($value)
  * @method static Builder|Approximation whereUuid($value)
- *
  * @mixin Eloquent
  */
 class Approximation extends BaseModel implements Transformable

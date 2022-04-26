@@ -18,13 +18,16 @@ abstract class ApproximationController extends PointInterestController
      */
     protected ProximityService $proximityService;
 
-    /**
-     * @param  ApproximationRepository  $approximationRepository
-     * @param  ProximityService  $proximityService
-     */
-    public function __construct(ApproximationRepository $approximationRepository, ProximityService $proximityService)
+    public function __construct()
     {
-        $this->approximationRepository = $approximationRepository;
-        $this->proximityService = $proximityService;
+        parent::__construct();
+
+        $this->initializeApproximation();
+    }
+
+    private function initializeApproximation()
+    {
+        $this->approximationRepository = app(ApproximationRepository::class);
+        $this->proximityService = app(ProximityService::class);
     }
 }
